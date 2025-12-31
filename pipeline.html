@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline - NOX Biotech</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom Fonts - BlauerNue */
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Thin.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Thin.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Thin.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Thin.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-ExtraLight.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-ExtraLight.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-ExtraLight.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-ExtraLight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Light.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Light.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Light.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Regular.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Regular.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Regular.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Medium.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Medium.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Medium.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-SemiBold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-SemiBold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-SemiBold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-SemiBold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Bold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Bold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Bold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-ExtraBold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-ExtraBold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-ExtraBold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-ExtraBold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Heavy.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Heavy.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Heavy.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Heavy.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            /* Logo Colors */
+            --old-brick: #9c1f2d;
+            --flamingo: #ef4344;
+            --scarlet-gum: #32165f;
+            --puce: #c97791;
+            --melanzane: #3a051c;
+            --sunglo: #e05f6d;
+            --violet: #1e0634;
+            --crown-of-thorns: #761c2f;
+            --grape: #401e4e;
+            
+            /* Theme Colors */
+            --accent-primary: #ef4344;
+            --accent-secondary: #e05f6d;
+            --accent-tertiary: #c97791;
+            --text-white: #ffffff;
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #000000;
+            font-weight: 400;
+            font-family: 'BlauerNue', sans-serif;
+        }
+
+        /* Ensure navbar and logo match index.html exactly */
+        .navbar .logo {
+            height: 105px;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Pipeline Hero Section */
+        .pipeline-hero {
+            position: relative;
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+
+        .pipeline-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .pipeline-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 77, 58, 0.4) 0%, rgba(45, 90, 71, 0.4) 25%, rgba(74, 107, 92, 0.4) 50%, rgba(107, 74, 107, 0.4) 75%, rgba(139, 74, 107, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .pipeline-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pipeline-hero-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .pipeline-hero-description {
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height: 1.8;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+            font-family: 'BlauerNue', sans-serif;
+            text-align: center;
+        }
+
+        .pipeline-hero-description p {
+            margin-bottom: 1.5rem;
+        }
+
+        .pipeline-hero-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Decorative Bars */
+        .pipeline-hero-bar {
+            position: absolute;
+            background: rgba(26, 77, 58, 0.8);
+            z-index: 1;
+        }
+
+        .pipeline-hero-bar.top-left-1 {
+            top: 2rem;
+            left: 2rem;
+            width: 120px;
+            height: 8px;
+        }
+
+        .pipeline-hero-bar.top-left-2 {
+            top: 3.5rem;
+            left: 2rem;
+            width: 80px;
+            height: 8px;
+        }
+
+        .pipeline-hero-bar.bottom-left {
+            bottom: 2rem;
+            left: 2rem;
+            width: 100px;
+            height: 8px;
+        }
+
+        .pipeline-hero-bar.top-right-1 {
+            top: 2rem;
+            right: 2rem;
+            width: 120px;
+            height: 8px;
+            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+        }
+
+        .pipeline-hero-bar.top-right-2 {
+            top: 3.5rem;
+            right: 2rem;
+            width: 80px;
+            height: 8px;
+            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+        }
+
+        .pipeline-hero-bar.bottom-right {
+            bottom: 2rem;
+            right: 2rem;
+            width: 100px;
+            height: 8px;
+            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pipeline-hero-content {
+                padding: 0 2rem;
+            }
+
+            .pipeline-hero-title {
+                margin-bottom: 3rem;
+            }
+
+            .pipeline-hero-bar {
+                display: none;
+            }
+        }
+
+        /* Pipeline Table Section */
+        .pipeline-table-section {
+            width: 100%;
+            padding: 6rem 3rem;
+            background: #ffffff;
+            overflow-x: auto;
+        }
+
+        .pipeline-table-container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .pipeline-table-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .pipeline-table-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .pipeline-table-subtitle {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: #666666;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pipeline-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .pipeline-table {
+            width: 100%;
+            min-width: 1400px;
+            border-collapse: collapse;
+            font-family: 'BlauerNue', sans-serif;
+        }
+
+        .pipeline-table thead th {
+            text-align: left;
+            padding: 1.5rem 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666666;
+            border-bottom: 2px solid #e0e0e0;
+            background: #fafafa;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .pipeline-table tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
+        }
+
+        .pipeline-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        .pipeline-table td {
+            padding: 2rem 1rem;
+            vertical-align: middle;
+        }
+
+        .pipeline-name {
+            font-weight: 600;
+            color: #ef4344;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .pipeline-modality {
+            font-weight: 400;
+            color: #ef4344;
+            font-size: 0.95rem;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pipeline-modality-icon {
+            font-size: 1.2rem;
+        }
+
+        .pipeline-indication {
+            font-weight: 400;
+            color: #ef4344;
+            font-size: 0.95rem;
+            min-width: 200px;
+        }
+
+        .pipeline-stage {
+            min-width: 140px;
+            position: relative;
+            padding: 0 1px;
+            vertical-align: bottom;
+        }
+
+        .pipeline-stage-bar-wrapper {
+            width: 100%;
+            height: 16px;
+            background: #e0e0e0;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 1px solid #d0d0d0;
+        }
+
+        .pipeline-stage-bar {
+            width: 100%;
+            height: 100%;
+            background: #e0e0e0;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pipeline-stage-bar.active {
+            position: relative;
+            background: #e0e0e0;
+        }
+
+        .pipeline-stage-bar.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                #1e0634 0%,    /* violet */
+                #32165f 15%,   /* scarlet-gum */
+                #401e4e 30%,   /* grape */
+                #761c2f 45%,   /* crown-of-thorns */
+                #9c1f2d 60%,   /* old-brick */
+                #ef4344 75%,   /* flamingo */
+                #e05f6d 90%,   /* sunglo */
+                #c97791 100%   /* puce */
+            );
+            background-size: 300% 100%;
+            animation: fillProgress 0.6s ease-out forwards, shimmer 3s linear infinite;
+            animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 0.6s);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes fillProgress {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Remove gaps between bars for continuous look */
+        .pipeline-table tbody td.pipeline-stage {
+            padding-left: 1px;
+            padding-right: 1px;
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+            vertical-align: bottom;
+            height: 80px;
+        }
+
+        .pipeline-table tbody td.pipeline-stage:last-child {
+            padding-right: 1rem;
+            height: 80px;
+        }
+
+        .pipeline-table thead th {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            height: 60px;
+        }
+
+        .pipeline-table thead th:first-child {
+            padding-left: 1rem;
+        }
+
+        .pipeline-table thead th:last-child {
+            padding-right: 1rem;
+        }
+
+        .pipeline-table tbody td.pipeline-stage:first-child {
+            padding-left: 1rem;
+        }
+
+        .pipeline-stage-label {
+            display: none;
+        }
+
+        .pipeline-stage-lock {
+            width: 20px;
+            height: 20px;
+            margin: 16px auto 0;
+            color: #ff9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .pipeline-table tbody td.pipeline-stage:has(.pipeline-stage-lock) {
+            position: relative;
+        }
+
+        .pipeline-stage:has(.pipeline-stage-lock) .pipeline-stage-bar-wrapper {
+            background: #e0e0e0;
+        }
+
+        .pipeline-status-label {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .pipeline-table-section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* CTA Section */
+        .purpose-cta-standalone {
+            width: 100%;
+            padding: 8rem 3rem;
+            background: #fafafa;
+            background-image: url('assets/purposehero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            position: relative;
+        }
+        
+        .purpose-cta-standalone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 250, 250, 0.85);
+            z-index: 0;
+        }
+
+        .purpose-cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .purpose-cta-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .purpose-cta-description {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: #000000;
+            margin-bottom: 3rem;
+            font-family: 'BlauerNue', sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+
+        .purpose-cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .purpose-cta-button {
+            padding: 1rem 2.5rem;
+            background: #ffffff;
+            border: 2px solid;
+            border-radius: 50px;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            font-weight: 600;
+            font-family: 'BlauerNue', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            color: #000000;
+        }
+
+        .purpose-cta-button.partner {
+            border-color: var(--flamingo);
+        }
+
+        .purpose-cta-button.join {
+            border-color: var(--scarlet-gum);
+        }
+
+        .purpose-cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .purpose-cta-standalone {
+                padding: 6rem 1.5rem;
+                background-attachment: scroll;
+            }
+
+            .purpose-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .purpose-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/Logo.png" alt="NOX Biotech Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="pipeline.html">Pipeline</a></li>
+                <li><a href="purpose.html">Purpose</a></li>
+                <li><a href="index.html#people">People</a></li>
+                <li><a href="index.html#in-nox">In-Nox</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Pipeline Hero Section -->
+    <section class="pipeline-hero">
+        <img src="assets/at.jpeg" alt="Pipeline Hero Background" class="pipeline-hero-background">
+        <div class="pipeline-hero-content">
+            <h1 class="pipeline-hero-title">
+                Lorem ipsum dolor<br>sit amet consectetur
+            </h1>
+            <div class="pipeline-hero-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        <!-- Decorative Bars -->
+        <div class="pipeline-hero-bar top-left-1"></div>
+        <div class="pipeline-hero-bar top-left-2"></div>
+        <div class="pipeline-hero-bar bottom-left"></div>
+        <div class="pipeline-hero-bar top-right-1"></div>
+        <div class="pipeline-hero-bar top-right-2"></div>
+        <div class="pipeline-hero-bar bottom-right"></div>
+    </section>
+
+    <!-- Pipeline Table Section -->
+    <section class="pipeline-table-section">
+        <div class="pipeline-table-container">
+            <div class="pipeline-table-header">
+                <h2 class="pipeline-table-title">From Discovery to Approval</h2>
+                <p class="pipeline-table-subtitle">A regenerative pipeline advancing veterinary care across species and modalities.</p>
+            </div>
+            <div class="pipeline-table-wrapper">
+                <table class="pipeline-table">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>MODALITY</th>
+                            <th>INDICATION</th>
+                            <th>PRE-CLINICAL</th>
+                            <th>PROOF OF CONCEPT</th>
+                            <th>CONTROLLED FIELD STUDY</th>
+                            <th>PIVOTAL STUDY</th>
+                            <th>COMMERCIALLY AVAILABLE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1: Feline Chronic Gingivostomatitis -->
+                        <tr>
+                            <td class="pipeline-name">Feline Chronic Gingivostomatitis</td>
+                            <td class="pipeline-modality">
+                                <span class="pipeline-modality-icon">*</span>
+                                <span>Allogeneic MSCs</span>
+                            </td>
+                            <td class="pipeline-indication">Feline Chronic Gingivostomatitis</td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.9s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <!-- Row 2: Feline Osteoarthritis -->
+                        <tr>
+                            <td class="pipeline-name">Feline Osteoarthritis</td>
+                            <td class="pipeline-modality">
+                                <span class="pipeline-modality-icon">*</span>
+                                <span>Allogeneic MSCs</span>
+                            </td>
+                            <td class="pipeline-indication">Feline Osteoarthritis</td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <!-- Row 3: Canine Osteoarthritis -->
+                        <tr>
+                            <td class="pipeline-name">Canine Osteoarthritis</td>
+                            <td class="pipeline-modality">
+                                <span class="pipeline-modality-icon">*</span>
+                                <span>Allogeneic MSCs</span>
+                            </td>
+                            <td class="pipeline-indication">Canine Osteoarthritis</td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <!-- Row 4: Feline Chronic Kidney Disease -->
+                        <tr>
+                            <td class="pipeline-name">Feline Chronic Kidney Disease</td>
+                            <td class="pipeline-modality">
+                                <span class="pipeline-modality-icon">@</span>
+                                <span>Exosome Therapy</span>
+                            </td>
+                            <td class="pipeline-indication">Feline Chronic Kidney Disease</td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <!-- Row 5: Canine Atopic Dermatitis -->
+                        <tr>
+                            <td class="pipeline-name">Canine Atopic Dermatitis</td>
+                            <td class="pipeline-modality">
+                                <span class="pipeline-modality-icon">☐</span>
+                                <span>Stem Cell Therapy</span>
+                            </td>
+                            <td class="pipeline-indication">Canine Atopic Dermatitis</td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                            </td>
+                            <td class="pipeline-stage">
+                                <div class="pipeline-stage-bar-wrapper">
+                                    <div class="pipeline-stage-bar"></div>
+                                </div>
+                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="purpose-cta-standalone">
+        <div class="purpose-cta-container">
+            <h2 class="purpose-cta-title">Be a part of our progress</h2>
+            <p class="purpose-cta-description">
+                Together, we can scale healing—multiplying what biology already does best: repair, balance, and resilience.
+            </p>
+            <div class="purpose-cta-buttons">
+                <a href="index.html#contact" class="purpose-cta-button partner">Partner With Us</a>
+                <a href="index.html#contact" class="purpose-cta-button join">Join The Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-logo-container">
+                        <div class="logo-glow"></div>
+                        <img src="assets/LogoContact.png" alt="NOX Biotech Logo" class="contact-logo-img">
+                    </div>
+                    <div class="contact-quick-info">
+                        <div class="quick-info-card">
+                            <div class="quick-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="quick-info-content">
+                                <span class="quick-info-label">Email</span>
+                                <a href="mailto:info@noxbiotech.com" class="quick-info-value">info@noxbiotech.com</a>
+                            </div>
+                        </div>
+                        <div class="quick-info-card">
+                            <div class="quick-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="quick-info-content">
+                                <span class="quick-info-label">Location</span>
+                                <span class="quick-info-value">Konya, Türkiye</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class="contact-header-modern">
+                        <span class="contact-badge">Get in Touch</span>
+                        <h2 class="contact-title-modern">Let's Start a Conversation</h2>
+                        <p class="contact-subtitle-modern">
+                            Have questions about our regenerative therapies? Want to explore partnerships? We're here to help.
+                        </p>
+                    </div>
+
+                    <form class="contact-form-modern" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="text" id="contact-name" name="name" placeholder=" " required>
+                                <label for="contact-name">Your Name</label>
+                                <span class="form-line"></span>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="contact-email" name="email" placeholder=" " required>
+                                <label for="contact-email">Email Address</label>
+                                <span class="form-line"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="text" id="contact-subject" name="subject" placeholder=" " required>
+                            <label for="contact-subject">Subject</label>
+                            <span class="form-line"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <textarea id="contact-message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="contact-message">Your Message</label>
+                            <span class="form-line"></span>
+                        </div>
+
+                        <button type="submit" class="contact-submit-modern">
+                            <span>Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="contact-address-full">
+                        <p><strong>NOX Biotech</strong><br>
+                        Akademi Mah. Gürbulut Sk. S.Ü. Teknoloji Geliştirme Bölgesi<br>
+                        Konya Teknokent No: 67<br>
+                        Selçuklu/ Konya, Türkiye</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Pipeline page specific navbar behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const logoImg = document.querySelector('.logo img');
+            
+            // Pipeline page sections for navbar background color matching
+            const sections = [
+                { element: document.querySelector('.pipeline-hero'), color: 'rgba(0, 0, 0, 0.3)', isLight: false },
+                { element: document.querySelector('.pipeline-table-section'), color: 'rgba(255, 255, 255, 0.9)', isLight: true },
+                { element: document.querySelector('.purpose-cta-standalone'), color: 'rgba(255, 255, 255, 0.8)', isLight: true },
+                { element: document.querySelector('.contact-section'), color: 'rgba(3, 6, 12, 0.8)', isLight: false }
+            ];
+            
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                const navbarHeight = navbar.offsetHeight;
+                
+                // Hide navbar on scroll down, show on scroll up
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    navbar.classList.add('hidden');
+                } else {
+                    navbar.classList.remove('hidden');
+                }
+                
+                // Find which section the navbar is over
+                let currentSection = sections[0];
+                for (const section of sections) {
+                    if (section.element) {
+                        const rect = section.element.getBoundingClientRect();
+                        if (rect.top <= navbarHeight && rect.bottom >= 0) {
+                            currentSection = section;
+                            break;
+                        }
+                    }
+                }
+                
+                // Adjust logo visibility for light backgrounds
+                if (logoImg) {
+                    if (currentSection.isLight) {
+                        logoImg.style.filter = 'drop-shadow(0 0 3px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 6px rgba(0, 0, 0, 0.5))';
+                    } else {
+                        logoImg.style.filter = 'none';
+                    }
+                }
+                
+                // Adjust navbar background based on scroll position
+                if (currentScroll > 100) {
+                    navbar.style.background = currentSection.color;
+                    navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.padding = '1.5rem 0';
+                } else {
+                    navbar.style.background = 'transparent';
+                    navbar.style.backdropFilter = 'blur(0px)';
+                    navbar.style.padding = '2rem 0';
+                }
+                
+                lastScroll = currentScroll;
+            });
+
+            // Pipeline table progress bar animation on scroll
+            const pipelineTable = document.querySelector('.pipeline-table-section');
+            const progressBars = document.querySelectorAll('.pipeline-stage-bar.active');
+            
+            const pipelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Reset all bars by removing and re-adding class
+                        progressBars.forEach(bar => {
+                            bar.classList.remove('active');
+                            void bar.offsetWidth; // Force reflow
+                            bar.classList.add('active');
+                        });
+                    } else {
+                        // Reset bars when out of view
+                        progressBars.forEach(bar => {
+                            bar.classList.remove('active');
+                        });
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            if (pipelineTable) {
+                pipelineObserver.observe(pipelineTable);
+            }
+        });
+    </script>
+</body>
+</html>

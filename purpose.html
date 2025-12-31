@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose - NOX Biotech</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom Fonts - BlauerNue */
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Thin.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Thin.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Thin.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Thin.otf') format('opentype');
+            font-weight: 100;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-ExtraLight.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-ExtraLight.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-ExtraLight.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-ExtraLight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Light.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Light.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Light.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Regular.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Regular.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Regular.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Medium.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Medium.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Medium.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-SemiBold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-SemiBold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-SemiBold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-SemiBold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Bold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Bold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Bold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-ExtraBold.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-ExtraBold.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-ExtraBold.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-ExtraBold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Heavy.woff2') format('woff2'),
+                 url('assets/fonts/BlauerNue-Heavy.woff') format('woff'),
+                 url('assets/fonts/BlauerNue-Heavy.ttf') format('truetype'),
+                 url('assets/fonts/BlauerNue-Heavy.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        :root {
+            /* Logo Colors */
+            --old-brick: #9c1f2d;
+            --flamingo: #ef4344;
+            --scarlet-gum: #32165f;
+            --puce: #c97791;
+            --melanzane: #3a051c;
+            --sunglo: #e05f6d;
+            --violet: #1e0634;
+            --crown-of-thorns: #761c2f;
+            --grape: #401e4e;
+            
+            /* Theme Colors */
+            --accent-primary: #ef4344;
+            --accent-secondary: #e05f6d;
+            --accent-tertiary: #c97791;
+            --text-white: #ffffff;
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background: #0F0505;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: 'BlauerNue', sans-serif;
+        }
+
+        /* Ensure navbar and logo match index.html exactly */
+        .navbar .logo {
+            height: 105px;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+
+
+        .purpose-page {
+            min-height: 100vh;
+            background: #ffffff;
+            padding-top: 0;
+            position: relative;
+        }
+
+        .purpose-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--violet) 0%, var(--melanzane) 100%);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* Purpose Hero Section */
+        .purpose-hero {
+            position: relative;
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--violet) 0%, var(--melanzane) 50%, var(--crown-of-thorns) 100%);
+        }
+
+        .purpose-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .purpose-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 6, 52, 0.4) 0%, rgba(58, 5, 28, 0.4) 50%, rgba(118, 28, 47, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .purpose-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .purpose-hero-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+            color: var(--text-white);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+            text-align: center;
+        }
+
+        .purpose-hero-description {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            line-height: 1.8;
+            color: var(--text-white);
+            margin-bottom: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-family: 'BlauerNue', sans-serif;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+
+        .purpose-hero-mission {
+            position: absolute;
+            bottom: 4rem;
+            left: 0;
+            right: 0;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            z-index: 2;
+        }
+
+        .purpose-mission-text {
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            color: var(--text-white);
+            font-family: 'BlauerNue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.8;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        .purpose-mission-text p {
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Purpose Content Section - Scrollable Container */
+        .purpose-content-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            background: #ffffff;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scarlet-gum) transparent;
+        }
+
+        .purpose-content-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .purpose-content-wrapper::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .purpose-content-wrapper::-webkit-scrollbar-thumb {
+            background: var(--scarlet-gum);
+            border-radius: 4px;
+        }
+
+        .purpose-content {
+            display: flex;
+            gap: 0;
+            min-width: max-content;
+            padding: 6rem 0;
+        }
+
+        .purpose-section {
+            min-width: 100vw;
+            padding: 0 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .purpose-section-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--scarlet-gum);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(50, 22, 95, 0.3);
+            text-align: center;
+        }
+
+        .purpose-section-text {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: var(--scarlet-gum);
+            margin-bottom: 2rem;
+            font-family: 'BlauerNue', sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            text-shadow: 0 0 8px rgba(50, 22, 95, 0.2);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .purpose-section-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section - Standalone */
+        .purpose-cta-standalone {
+            width: 100%;
+            padding: 8rem 3rem;
+            background: #fafafa;
+            background-image: url('assets/purposehero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            position: relative;
+        }
+        
+        .purpose-cta-standalone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 250, 250, 0.85);
+            z-index: 0;
+        }
+
+        .purpose-cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .purpose-cta-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .purpose-cta-description {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            color: #000000;
+            margin-bottom: 3rem;
+            font-family: 'BlauerNue', sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+
+        .purpose-cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .purpose-cta-button {
+            padding: 1rem 2.5rem;
+            background: #ffffff;
+            border: 2px solid;
+            border-radius: 50px;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            font-weight: 600;
+            font-family: 'BlauerNue', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            color: #000000;
+        }
+
+        .purpose-cta-button.partner {
+            border-color: var(--flamingo);
+        }
+
+        .purpose-cta-button.join {
+            border-color: var(--scarlet-gum);
+        }
+
+        .purpose-cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Repair Code Section */
+        .purpose-repair-section {
+            width: 100%;
+            padding: 8rem 3rem;
+            background: #f5f5f5;
+        }
+
+        .purpose-repair-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .purpose-repair-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .purpose-repair-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .purpose-repair-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .purpose-repair-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .purpose-repair-label-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .purpose-repair-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-repair-subtitle {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 600;
+            color: #000000;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+        }
+
+        .purpose-repair-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        .purpose-repair-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-repair-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .purpose-repair-image-wrapper {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Sustainability Section */
+        .purpose-sustainability-section {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .purpose-sustainability-content {
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        .purpose-sustainability-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .purpose-sustainability-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .purpose-sustainability-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .purpose-sustainability-label-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .purpose-sustainability-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.15;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .purpose-sustainability-subtitle {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-sustainability-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.8;
+            max-width: 550px;
+        }
+
+        .purpose-sustainability-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-sustainability-image-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .purpose-sustainability-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .purpose-hero-content {
+                padding: 0 2rem;
+                top: 40%;
+            }
+
+            .purpose-hero-mission {
+                padding: 0 2rem;
+                bottom: 2rem;
+            }
+
+            .purpose-content {
+                padding: 4rem 0;
+            }
+
+            .purpose-section {
+                padding: 0 1.5rem;
+            }
+
+            .purpose-cta-standalone {
+                padding: 6rem 1.5rem;
+                background-attachment: scroll;
+            }
+
+            .purpose-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .purpose-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .purpose-repair-section {
+                padding: 6rem 1.5rem;
+            }
+
+            .purpose-repair-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .purpose-repair-image-wrapper {
+                height: 400px;
+            }
+
+            .purpose-sustainability-section {
+                grid-template-columns: 1fr;
+            }
+
+            .purpose-sustainability-content {
+                padding: 4rem 2rem;
+                order: 2;
+            }
+
+            .purpose-sustainability-image-wrapper {
+                min-height: 40vh;
+                order: 1;
+            }
+        }
+
+        /* Animal Rights Section - Minimalist */
+        .purpose-animal-rights-section {
+            width: 100%;
+            min-height: 100vh;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 3rem;
+            position: relative;
+        }
+
+        .purpose-animal-rights-label {
+            position: absolute;
+            top: 4rem;
+            left: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .purpose-animal-rights-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .purpose-animal-rights-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .purpose-animal-rights-label-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .purpose-animal-rights-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.1;
+            text-align: center;
+            letter-spacing: -0.02em;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .purpose-animal-rights-title span {
+            display: block;
+        }
+
+        .purpose-animal-rights-description {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 1000px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .purpose-animal-rights-description p {
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-partners-carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 4rem;
+            padding: 3rem 0;
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+
+        .purpose-partners-track {
+            display: flex;
+            gap: 4rem;
+            animation: scrollPartners 30s linear infinite;
+            width: max-content;
+        }
+
+        .purpose-partner-logo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .purpose-partner-logo:hover {
+            opacity: 1;
+        }
+
+        .purpose-partner-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .purpose-partner-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        @keyframes scrollPartners {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Duplicate logos for seamless loop */
+        .purpose-partners-track::after {
+            content: '';
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .purpose-animal-rights-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .purpose-animal-rights-label {
+                top: 2rem;
+                left: 1.5rem;
+            }
+
+            .purpose-animal-rights-title {
+                font-size: clamp(2.5rem, 10vw, 6rem);
+            }
+
+            .purpose-animal-rights-description {
+                margin: 3rem auto 4rem;
+                padding: 0 1rem;
+            }
+
+            .purpose-partner-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .purpose-partners-track {
+                gap: 3rem;
+            }
+        }
+
+        /* Override for Our People icon in purpose.html */
+        .our-people-section .our-people-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .our-people-section .our-people-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .our-people-section .our-people-label {
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+        }
+
+        /* Override for Animal Cell section title */
+        .our-people-section .our-people-title {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .our-people-section .people-title-line-3 {
+            display: block;
+            animation: slideInLeft 1s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/Logo.png" alt="NOX Biotech Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="pipeline.html">Pipeline</a></li>
+                <li><a href="purpose.html">Purpose</a></li>
+                <li><a href="index.html#people">People</a></li>
+                <li><a href="index.html#in-nox">In-Nox</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Purpose Hero Section -->
+    <section class="purpose-hero">
+        <video class="purpose-hero-video" autoplay muted loop playsinline>
+            <source src="assets/cow.mp4" type="video/mp4">
+        </video>
+        <div class="purpose-hero-content">
+            <h1 class="purpose-hero-title">The future<br>is cellular</h1>
+            <p class="purpose-hero-description">
+                NOX BIOTECH is shaping a healthier future for animals by translating the cell's intelligence into clinically validated, antibiotic-light regenerative therapies.<br><br>
+                We don't just fight disease — we help restore balance, repair tissue, and support lasting recovery.
+            </p>
+        </div>
+        <div class="purpose-hero-mission">
+            <div class="purpose-mission-text">
+                <p>TODAY'S MISSION: ANIMAL HEALTH.</p>
+                <p>TOMORROW'S POSSIBILITIES: PRECISION VETERINARY THERAPEUTICS, FARM RESILIENCE, COMPANION ANIMAL CARE, AND ONE HEALTH IMPACT.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section - Right after Hero -->
+    <section class="purpose-cta-standalone">
+        <div class="purpose-cta-container">
+            <h2 class="purpose-cta-title">Be a part of our progress</h2>
+            <p class="purpose-cta-description">
+                Together, we can scale healing—multiplying what biology already does best: repair, balance, and resilience.
+            </p>
+            <div class="purpose-cta-buttons">
+                <a href="index.html#contact" class="purpose-cta-button partner">Partner With Us</a>
+                <a href="index.html#contact" class="purpose-cta-button join">Join The Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repair Code Section -->
+    <section class="purpose-repair-section">
+        <div class="purpose-repair-container">
+            <div class="purpose-repair-content">
+                <div class="purpose-repair-label">
+                    <div class="purpose-repair-icon">
+                        <img src="assets/PipelineLogo.png" alt="Repair Code Icon" class="purpose-repair-icon-img">
+                    </div>
+                    <span class="purpose-repair-label-text">THE REPAIR CODE</span>
+                </div>
+                <h2 class="purpose-repair-title">A life lesson from life itself</h2>
+                <div class="purpose-repair-text">
+                    <p>When modern biology learned to read DNA, it transformed how we understand living systems. But biology doesn't run on genes alone. The real-time decisions of health and disease are executed through cellular communication—signals that coordinate inflammation, repair, and immune balance across tissues.</p>
+                    <p>These instructions are carried by trillions of cells exchanging bioactive messages, including the regenerative cargo of stem cells and the exosomes they release. Yet most of this "repair language" remains outside routine veterinary care—because it's difficult to measure, standardize, and translate into safe, field-ready therapeutics.</p>
+                    <p>NOX BIOTECH is doing for regenerative veterinary medicine what standardization did for modern biologics: turning complex cellular signals into clinically validated, antibiotic-free therapies that support healing quality, resilience, and long-term recovery—across livestock and companion animal health.</p>
+                </div>
+            </div>
+            <div class="purpose-repair-image-wrapper">
+                <img src="assets/repair.png" alt="Repair Code" class="purpose-repair-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="purpose-sustainability-section">
+        <div class="purpose-sustainability-content">
+            <div class="purpose-sustainability-label">
+                <div class="purpose-sustainability-icon">
+                    <img src="assets/PipelineLogo.png" alt="Sustainability Icon" class="purpose-sustainability-icon-img">
+                </div>
+                <span class="purpose-sustainability-label-text">Sustainability</span>
+            </div>
+            <h2 class="purpose-sustainability-title">Our commitment<br>to animal health</h2>
+            <p class="purpose-sustainability-subtitle">Healthy animals support a healthier planet.</p>
+            <div class="purpose-sustainability-text">
+                <p>Livestock and companion animal health sit at the center of food security, animal welfare, and environmental stewardship—yet the over-reliance on antibiotics threatens this balance through antimicrobial resistance (AMR) and avoidable residues across ecosystems.</p>
+                <p>At NOX BIOTECH, sustainability starts with how we design therapies: antibiotic-light, regenerative biologics that support the animal's own repair and immune balance, helping reduce antibiotic burden without compromising outcomes in real-world care.</p>
+                <p>We build this future responsibly. From ethical sourcing and full traceability of biological inputs to standardized manufacturing, quality controls, and waste-conscious operations, we aim to translate advanced biology into solutions that can be trusted at scale—by veterinarians, farms, and the communities they serve.</p>
+                <p>Sustainability isn't a side initiative. It's a core requirement of delivering One Health impact—where animal health, human health, and the environment move forward together.</p>
+            </div>
+        </div>
+        <div class="purpose-sustainability-image-wrapper">
+            <img src="assets/cow2.jpg" alt="Sustainability" class="purpose-sustainability-image">
+        </div>
+    </section>
+
+    <!-- Animal Rights Section -->
+    <section class="purpose-animal-rights-section">
+        <div class="purpose-animal-rights-label">
+            <div class="purpose-animal-rights-icon">
+                <img src="assets/PipelineLogo.png" alt="Animal Rights Icon" class="purpose-animal-rights-icon-img">
+            </div>
+            <span class="purpose-animal-rights-label-text">OUR PARTNERS</span>
+        </div>
+        <h1 class="purpose-animal-rights-title">
+            <span>Healthy life</span>
+            <span>is every</span>
+            <span>animal's right</span>
+        </h1>
+        <div class="purpose-animal-rights-description">
+            <p>We're advancing animal health by translating stem cell and exosome science into antibiotic-light, regenerative therapeutics.</p>
+            <p>We achieve this through close collaboration with veterinary clinicians, academic research groups and research centers, and both local and industrial partners.</p>
+        </div>
+        <div class="purpose-partners-carousel">
+            <div class="purpose-partners-track">
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+                <div class="purpose-partner-logo">
+                    <img src="assets/Logo.png" alt="Partner Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animal Cell Section -->
+    <section class="our-people-section" id="animal-cell">
+        <div class="our-people-background">
+            <div class="our-people-image">
+                <img src="assets/girl.jpeg" alt="Animal Cell Background">
+            </div>
+        </div>
+        
+        <div class="our-people-content">
+            <div class="our-people-text-container">
+                <div class="our-people-label">
+                    <div class="our-people-icon">
+                        <img src="assets/PipelineLogo.png" alt="Our People Icon">
+                    </div>
+                    <span>OUR PEOPLE</span>
+                </div>
+                
+                <h1 class="our-people-title">
+                    <span class="people-title-line-1">ANIMAL.</span>
+                    <span class="people-title-line-2">CELL.</span>
+                    <span class="people-title-line-3">HUMAN.</span>
+                </h1>
+                
+                <p class="our-people-description">
+                    We grow like cells: with purpose, structure and scale.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-logo-container">
+                        <div class="logo-glow"></div>
+                        <img src="assets/LogoContact.png" alt="NOX Biotech Logo" class="contact-logo-img">
+                    </div>
+                    <div class="contact-quick-info">
+                        <div class="quick-info-card">
+                            <div class="quick-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="quick-info-content">
+                                <span class="quick-info-label">Email</span>
+                                <a href="mailto:info@noxbiotech.com" class="quick-info-value">info@noxbiotech.com</a>
+                            </div>
+                        </div>
+                        <div class="quick-info-card">
+                            <div class="quick-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="quick-info-content">
+                                <span class="quick-info-label">Location</span>
+                                <span class="quick-info-value">Konya, Türkiye</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class="contact-header-modern">
+                        <span class="contact-badge">Get in Touch</span>
+                        <h2 class="contact-title-modern">Let's Start a Conversation</h2>
+                        <p class="contact-subtitle-modern">
+                            Have questions about our regenerative therapies? Want to explore partnerships? We're here to help.
+                        </p>
+                    </div>
+
+                    <form class="contact-form-modern" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="text" id="contact-name" name="name" placeholder=" " required>
+                                <label for="contact-name">Your Name</label>
+                                <span class="form-line"></span>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="contact-email" name="email" placeholder=" " required>
+                                <label for="contact-email">Email Address</label>
+                                <span class="form-line"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="text" id="contact-subject" name="subject" placeholder=" " required>
+                            <label for="contact-subject">Subject</label>
+                            <span class="form-line"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <textarea id="contact-message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="contact-message">Your Message</label>
+                            <span class="form-line"></span>
+                        </div>
+
+                        <button type="submit" class="contact-submit-modern">
+                            <span>Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="contact-address-full">
+                        <p><strong>NOX Biotech</strong><br>
+                        Akademi Mah. Gürbulut Sk. S.Ü. Teknoloji Geliştirme Bölgesi<br>
+                        Konya Teknokent No: 67<br>
+                        Selçuklu/ Konya, Türkiye</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Purpose page specific navbar behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const logoImg = document.querySelector('.logo img');
+            
+            // Purpose page sections for navbar background color matching
+            const sections = [
+                { element: document.querySelector('.purpose-hero'), color: 'rgba(0, 0, 0, 0.3)', isLight: false },
+                { element: document.querySelector('.purpose-cta-standalone'), color: 'rgba(255, 255, 255, 0.8)', isLight: true },
+                { element: document.querySelector('.purpose-repair-section'), color: 'rgba(245, 245, 245, 0.9)', isLight: true },
+                { element: document.querySelector('.purpose-sustainability-section'), color: 'rgba(255, 255, 255, 0.8)', isLight: true },
+                { element: document.querySelector('.purpose-animal-rights-section'), color: 'rgba(245, 245, 245, 0.9)', isLight: true },
+                { element: document.querySelector('.our-people-section'), color: 'rgba(0, 0, 0, 0.3)', isLight: false },
+                { element: document.querySelector('.contact-section'), color: 'rgba(3, 6, 12, 0.8)', isLight: false }
+            ];
+            
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                const navbarHeight = navbar.offsetHeight;
+                
+                // Hide navbar on scroll down, show on scroll up (same as index.html)
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    navbar.classList.add('hidden');
+                } else {
+                    navbar.classList.remove('hidden');
+                }
+                
+                // Find which section the navbar is over
+                let currentSection = sections[0];
+                for (const section of sections) {
+                    if (section.element) {
+                        const rect = section.element.getBoundingClientRect();
+                        if (rect.top <= navbarHeight && rect.bottom >= 0) {
+                            currentSection = section;
+                            break;
+                        }
+                    }
+                }
+                
+                // Adjust logo visibility for light backgrounds
+                if (logoImg) {
+                    if (currentSection.isLight) {
+                        logoImg.style.filter = 'drop-shadow(0 0 3px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 6px rgba(0, 0, 0, 0.5))';
+                    } else {
+                        logoImg.style.filter = 'none';
+                    }
+                }
+                
+                // Adjust navbar background based on scroll position
+                if (currentScroll > 100) {
+                    navbar.style.background = currentSection.color;
+                    navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.padding = '1.5rem 0';
+                } else {
+                    navbar.style.background = 'transparent';
+                    navbar.style.backdropFilter = 'blur(0px)';
+                    navbar.style.padding = '2rem 0';
+                }
+                
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+</body>
+</html>
+
