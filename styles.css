@@ -2042,7 +2042,6 @@ body {
 /* Contact Section - Modern Redesign */
 .contact-section {
     position: relative;
-    height: 100vh;
     min-height: 100vh;
     background: #03060c;
     display: flex;
@@ -2051,6 +2050,7 @@ body {
     overflow: hidden;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    padding: 6rem 0;
 }
 
 .contact-section::before {
@@ -2069,24 +2069,24 @@ body {
 
 .contact-wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 3rem 3rem;
     position: relative;
     z-index: 1;
 }
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
     align-items: start;
 }
 
 .contact-left {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
     position: sticky;
     top: 120px;
 }
@@ -2341,7 +2341,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 24px;
-    padding: 3rem;
+    padding: 3.5rem;
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -2650,14 +2650,11 @@ body {
 
 @media (max-width: 768px) {
     .contact-section {
-        padding: 0;
         background-attachment: scroll;
-        height: 100vh;
         min-height: 100vh;
         align-items: center;
         overflow: hidden;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 4rem 0;
     }
     
     .contact-wrapper {
@@ -2762,12 +2759,10 @@ body {
 /* Samsung Galaxy S24 FE */
 @media (max-width: 430px) {
     .contact-section {
-        height: 100vh;
         min-height: 100vh;
         align-items: center;
         overflow: hidden;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 3rem 0;
     }
     
     .contact-wrapper {
