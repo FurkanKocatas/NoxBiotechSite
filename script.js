@@ -3,45 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const hero = document.querySelector('.hero');
     
-    // Add smooth scroll with offset for fixed navbar
+    // Add smooth scroll - no offset needed since navbar is absolute
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
     
-    // Navbar scroll effect - match section colors
+    // Logo visibility for light backgrounds
     const sections = [
-        { element: document.querySelector('.hero'), color: 'rgba(0, 0, 0, 0.3)', isLight: false },
-        { element: document.querySelector('.platform-section'), color: 'rgba(255, 255, 255, 0.8)', isLight: true },
-        { element: document.querySelector('.purpose-section'), color: 'rgba(255, 255, 255, 0.7)', isLight: true },
-        { element: document.querySelector('.our-purpose-section'), color: 'rgba(255, 255, 255, 0.8)', isLight: true },
-        { element: document.querySelector('.contact-section'), color: 'rgba(3, 6, 12, 0.8)', isLight: false }
+        { element: document.querySelector('.hero'), isLight: false },
+        { element: document.querySelector('.platform-section'), isLight: true },
+        { element: document.querySelector('.purpose-section'), isLight: true },
+        { element: document.querySelector('.our-purpose-section'), isLight: true },
+        { element: document.querySelector('.contact-section'), isLight: false }
     ];
     
     const logoImg = document.querySelector('.logo img');
     
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
         const navbarHeight = navbar.offsetHeight;
-        
-        // Hide navbar on scroll down, show on scroll up
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            // Scrolling down
-            navbar.classList.add('hidden');
-        } else {
-            // Scrolling up
-            navbar.classList.remove('hidden');
-        }
         
         // Find which section the navbar is over
         let currentSection = sections[0];
@@ -64,18 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 logoImg.style.filter = 'none';
             }
         }
-        
-        if (currentScroll > 100) {
-            navbar.style.background = currentSection.color;
-            navbar.style.backdropFilter = 'blur(10px)';
-            navbar.style.padding = '1.5rem 0';
-        } else {
-            navbar.style.background = 'transparent';
-            navbar.style.backdropFilter = 'blur(0px)';
-            navbar.style.padding = '2rem 0';
-        }
-        
-        lastScroll = currentScroll;
     });
 
     // Parallax effect for hero background
@@ -85,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (heroBackground && scrolled < window.innerHeight) {
             heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-            heroBackground.style.opacity = 1 - (scrolled / window.innerHeight);
+            // Removed opacity fade to prevent blur effect when scrolling
         }
     });
 
