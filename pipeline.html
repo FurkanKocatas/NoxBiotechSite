@@ -422,28 +422,32 @@
 
         .pipeline-stage-bar-wrapper {
             width: 100%;
-            height: 16px;
-            background: #e0e0e0;
-            border-radius: 0;
+            height: 28px;
+            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
+            border-radius: 14px;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
-            border: 1px solid #d0d0d0;
+            box-shadow: 
+                inset 0 2px 4px rgba(255, 255, 255, 0.6),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .pipeline-stage-bar {
             width: 100%;
             height: 100%;
-            background: #e0e0e0;
-            border-radius: 0;
+            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
+            border-radius: 14px;
             position: relative;
             overflow: hidden;
         }
 
         .pipeline-stage-bar.active {
             position: relative;
-            background: #e0e0e0;
+            background: transparent;
         }
 
         .pipeline-stage-bar.active::before {
@@ -453,20 +457,63 @@
             left: 0;
             width: 0;
             height: 100%;
-            background: linear-gradient(90deg, 
-                #1e0634 0%,    /* violet */
-                #32165f 15%,   /* scarlet-gum */
-                #401e4e 30%,   /* grape */
-                #761c2f 45%,   /* crown-of-thorns */
-                #9c1f2d 60%,   /* old-brick */
-                #ef4344 75%,   /* flamingo */
-                #e05f6d 90%,   /* sunglo */
-                #c97791 100%   /* puce */
-            );
-            background-size: 300% 100%;
+            background: var(--bar-color, #1e0634);
             animation: fillProgress 0.6s ease-out forwards, shimmer 3s linear infinite;
             animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 0.6s);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            box-shadow: 
+                inset 0 2px 8px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+                0 2px 12px rgba(239, 67, 68, 0.3),
+                0 0 20px rgba(239, 67, 68, 0.15);
+        }
+
+        /* Stage 1: PRE-CLINICAL (4. column) - Tek renk (violet) */
+        .pipeline-table tbody tr td:nth-child(4).pipeline-stage .pipeline-stage-bar.active::before {
+            --bar-color: #1e0634; /* violet */
+        }
+
+        /* Stage 2: PROOF OF CONCEPT (5. column) - Hafif değişim */
+        .pipeline-table tbody tr td:nth-child(5).pipeline-stage .pipeline-stage-bar.active::before {
+            --bar-color: #32165f; /* scarlet-gum */
+        }
+
+        /* Stage 3: CONTROLLED FIELD STUDY (6. column) - Orta renk */
+        .pipeline-table tbody tr td:nth-child(6).pipeline-stage .pipeline-stage-bar.active::before {
+            --bar-color: #401e4e; /* grape */
+        }
+
+        /* Stage 4: PIVOTAL STUDY (7. column) - Daha parlak */
+        .pipeline-table tbody tr td:nth-child(7).pipeline-stage .pipeline-stage-bar.active::before {
+            --bar-color: #761c2f; /* crown-of-thorns */
+        }
+
+        /* Stage 5: COMMERCIALLY AVAILABLE (8. column) - En parlak (gökkuşağı sonu) */
+        .pipeline-table tbody tr td:nth-child(8).pipeline-stage .pipeline-stage-bar.active::before {
+            background: linear-gradient(135deg, 
+                #9c1f2d 0%,    /* old-brick */
+                #ef4344 50%,   /* flamingo */
+                #e05f6d 100%   /* sunglo */
+            );
+        }
+
+        /* Premium 3D tube effect with highlight */
+        .pipeline-stage-bar.active::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 0;
+            height: 40%;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                transparent 100%
+            );
+            border-radius: 14px 14px 0 0;
+            animation: fillProgress 0.6s ease-out forwards;
+            animation-delay: var(--delay, 0s);
+            pointer-events: none;
         }
 
         @keyframes shimmer {
@@ -487,19 +534,93 @@
             }
         }
 
-        /* Remove gaps between bars for continuous look */
+        /* Hover effect for premium feel */
+        .pipeline-table tbody tr:hover .pipeline-stage-bar-wrapper {
+            transform: translateY(-1px);
+            box-shadow: 
+                inset 0 2px 4px rgba(255, 255, 255, 0.7),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.25),
+                0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pipeline-table tbody tr:hover .pipeline-stage-bar.active::before {
+            box-shadow: 
+                inset 0 2px 8px rgba(255, 255, 255, 0.5),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.35),
+                0 4px 16px rgba(239, 67, 68, 0.4),
+                0 0 24px rgba(239, 67, 68, 0.2);
+        }
+
+        /* Remove gaps between bars for continuous look - single bar */
         .pipeline-table tbody td.pipeline-stage {
-            padding-left: 1px;
-            padding-right: 1px;
+            padding-left: 0;
+            padding-right: 0;
             padding-top: 1.5rem;
             padding-bottom: 1rem;
             vertical-align: bottom;
             height: 80px;
         }
 
+        .pipeline-table tbody td.pipeline-stage:first-child {
+            padding-left: 1rem;
+        }
+
         .pipeline-table tbody td.pipeline-stage:last-child {
             padding-right: 1rem;
             height: 80px;
+        }
+
+        /* Smooth connection between tube segments - no gaps */
+        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar-wrapper {
+            margin-left: 0;
+            border-left: none;
+        }
+
+        /* Remove border radius on inner edges for seamless connection */
+        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar-wrapper {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .pipeline-table tbody td.pipeline-stage:not(:last-child) .pipeline-stage-bar-wrapper {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* First bar - left rounded */
+        .pipeline-table tbody td.pipeline-stage:first-child .pipeline-stage-bar-wrapper {
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+        }
+
+        /* Last bar - right rounded */
+        .pipeline-table tbody td.pipeline-stage:last-child .pipeline-stage-bar-wrapper {
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
+        }
+
+        /* Active bars - remove border radius on inner edges */
+        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar.active::before {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .pipeline-table tbody td.pipeline-stage:not(:last-child) .pipeline-stage-bar.active::before {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* First active bar - left rounded */
+        .pipeline-table tbody td.pipeline-stage:first-child .pipeline-stage-bar.active::before {
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+        }
+
+        /* Last active bar - right rounded */
+        .pipeline-table tbody td.pipeline-stage:last-child .pipeline-stage-bar.active::before {
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
         }
 
         .pipeline-table thead th {
@@ -543,7 +664,8 @@
         }
 
         .pipeline-stage:has(.pipeline-stage-lock) .pipeline-stage-bar-wrapper {
-            background: #e0e0e0;
+            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
+            opacity: 0.7;
         }
 
         .pipeline-status-label {
@@ -553,6 +675,28 @@
         @media (max-width: 1024px) {
             .pipeline-table-section {
                 padding: 4rem 1.5rem;
+            }
+            
+            .pipeline-stage-bar-wrapper {
+                height: 24px;
+                border-radius: 12px;
+            }
+            
+            .pipeline-stage-bar.active::before,
+            .pipeline-stage-bar.active::after {
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pipeline-stage-bar-wrapper {
+                height: 22px;
+                border-radius: 11px;
+            }
+            
+            .pipeline-stage-bar.active::before,
+            .pipeline-stage-bar.active::after {
+                border-radius: 11px;
             }
         }
 

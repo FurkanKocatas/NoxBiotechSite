@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    
     // Parallax effect for hero background
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -63,6 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
             heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
             // Removed opacity fade to prevent blur effect when scrolling
         }
+        
+        // Track scrolling state
+        isScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+        }, 150);
     });
 
     // Mouse move parallax effect
