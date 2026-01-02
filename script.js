@@ -515,11 +515,11 @@ function initPurposeSection() {
         
         const titleTop = titleRect.top;
         
-        // Very large scroll range for precise letter-by-letter effect
-        // Start when title is 90% down the viewport
-        // Finish when title is 0% down (at top)
-        const startPoint = viewportHeight * 0.9;
-        const endPoint = 0;
+        // 1.2x faster scroll range for quicker animation - still letter by letter
+        // Start when title is 65% down the viewport
+        // Finish when title is 40% down
+        const startPoint = viewportHeight * 0.65;
+        const endPoint = viewportHeight * 0.40;
         const scrollRange = startPoint - endPoint;
         
         // Calculate progress: 0 when title top is at startPoint, 1 when at endPoint
@@ -538,24 +538,24 @@ function initPurposeSection() {
             // Calculate the exact progress point for this character
             const charProgress = index / (chars.length - 1);
             
-            // Add a very small transition window for each letter (0.5% of total range)
-            const transitionWidth = 0.005;
+            // Larger transition window for faster but still smooth animation (4% of total range)
+            const transitionWidth = 0.04;
             const charStart = Math.max(0, charProgress - transitionWidth);
             const charEnd = Math.min(1, charProgress + transitionWidth);
             
             if (scrollProgress < charStart) {
-                // Haven't reached this letter yet - black
-                char.style.color = '#000';
+                // Haven't reached this letter yet - white
+                char.style.color = '#fff';
             } else if (scrollProgress > charEnd) {
-                // Passed this letter - orange
+                // Passed this letter - accent red
                 char.style.color = '#ef4344';
             } else {
                 // Currently transitioning this letter - interpolate color
                 const localProgress = (scrollProgress - charStart) / (charEnd - charStart);
-                // Interpolate between black (0,0,0) and orange (239,67,68)
-                const r = Math.round(0 + (239 * localProgress));
-                const g = Math.round(0 + (67 * localProgress));
-                const b = Math.round(0 + (68 * localProgress));
+                // Interpolate between white (255,255,255) and orange/red (239,67,68)
+                const r = Math.round(255 + ((239 - 255) * localProgress));
+                const g = Math.round(255 + ((67 - 255) * localProgress));
+                const b = Math.round(255 + ((68 - 255) * localProgress));
                 char.style.color = `rgb(${r}, ${g}, ${b})`;
             }
         });

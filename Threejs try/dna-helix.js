@@ -226,3 +226,4 @@ animateWithMouse();
 console.log('DNA Helix loaded successfully!');
 console.log('Move your mouse to interact with the helix');
 
+
