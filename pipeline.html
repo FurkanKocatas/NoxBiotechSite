@@ -639,21 +639,22 @@
         /* Background track - Tube style */
         .progress-track {
             position: relative;
-            height: 28px;
-            background: linear-gradient(180deg, #e8e8e8 0%, #f5f5f5 50%, #e0e0e0 100%);
-            border-radius: 14px;
+            height: 24px;
+            background: #eeeeee;
+            border-radius: 0;
             width: 100%;
             overflow: visible;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 -1px 2px rgba(255, 255, 255, 0.8);
+            border: 1px solid #e0e0e0;
         }
 
         /* Progress bar with gradient - Tube style */
         .progress-bar {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
-            height: 100%;
-            border-radius: 14px;
+            height: 12px;
+            transform: translateY(-50%);
+            border-radius: 0;
             background: linear-gradient(180deg,
                     #e05f6d 0%,
                     #ef4344 20%,
@@ -662,36 +663,11 @@
                     #32165f 100%);
             background-size: 100% 100%;
             width: 0;
-            animation: progressFill 1.5s ease-out forwards;
-            box-shadow:
-                inset 0 2px 4px rgba(255, 255, 255, 0.4),
-                inset 0 -2px 4px rgba(0, 0, 0, 0.2),
-                0 2px 6px rgba(50, 22, 95, 0.3);
+            transition: width 1.5s ease-out;
         }
 
-        /* Tube highlight/shine effect */
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 8px;
-            right: 8px;
-            height: 8px;
-            background: linear-gradient(90deg,
-                    rgba(255, 255, 255, 0.1) 0%,
-                    rgba(255, 255, 255, 0.4) 50%,
-                    rgba(255, 255, 255, 0.1) 100%);
-            border-radius: 10px;
-        }
-
-        @keyframes progressFill {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: var(--progress-width, 0%);
-            }
+        .progress-bar.animate {
+            width: var(--progress-width, 0%);
         }
 
         /* Progress status text */
@@ -1310,28 +1286,21 @@
             });
 
             // Pipeline table progress bar animation on scroll
-            const pipelineTable = document.querySelector('.pipeline-table-section');
-            const progressBars = document.querySelectorAll('.pipeline-stage-bar.active');
+            const progressBars = document.querySelectorAll('.progress-bar');
 
-            const pipelineObserver = new IntersectionObserver((entries) => {
+            const progressObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        progressBars.forEach(bar => {
-                            bar.classList.remove('active');
-                            void bar.offsetWidth;
-                            bar.classList.add('active');
-                        });
+                        entry.target.classList.add('animate');
                     } else {
-                        progressBars.forEach(bar => {
-                            bar.classList.remove('active');
-                        });
+                        entry.target.classList.remove('animate');
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.1 });
 
-            if (pipelineTable) {
-                pipelineObserver.observe(pipelineTable);
-            }
+            progressBars.forEach(bar => {
+                progressObserver.observe(bar);
+            });
         });
     </script>
 </body>

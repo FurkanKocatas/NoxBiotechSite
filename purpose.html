@@ -727,6 +727,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            filter: invert(1);
         }
 
         .purpose-animal-rights-label-text {
@@ -782,7 +783,7 @@
 
         .purpose-partners-track {
             display: flex;
-            gap: 4rem;
+            gap: 8rem;
             animation: scrollPartners 30s linear infinite;
             width: max-content;
         }
@@ -806,12 +807,10 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
         }
 
         .purpose-partner-logo:hover img {
-            filter: grayscale(0%);
+            transform: scale(1.05);
         }
 
         @keyframes scrollPartners {
@@ -855,7 +854,7 @@
             }
 
             .purpose-partners-track {
-                gap: 3rem;
+                gap: 5rem;
             }
         }
 
@@ -1028,36 +1027,31 @@
         </div>
         <div class="purpose-partners-carousel">
             <div class="purpose-partners-track">
+                <!-- Partner Logos -->
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/KonyaTeknokent.png" alt="Konya Teknokent">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/dynamicanimal.png" alt="Dynamic Animal">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/estem logo.png" alt="ESTEM">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
-                </div>
-                <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/kosgb.png" alt="KOSGEB">
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/KonyaTeknokent.png" alt="Konya Teknokent">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/dynamicanimal.png" alt="Dynamic Animal">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/estem logo.png" alt="ESTEM">
                 </div>
                 <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
-                </div>
-                <div class="purpose-partner-logo">
-                    <img src="assets/Logo.png" alt="Partner Logo">
+                    <img src="paydaslarlogo/kosgb.png" alt="KOSGEB">
                 </div>
             </div>
         </div>
