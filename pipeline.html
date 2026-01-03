@@ -228,10 +228,35 @@
             margin-bottom: 0;
         }
 
+        .pipeline-hero-mission {
+            position: absolute;
+            bottom: 4rem;
+            left: 0;
+            right: 0;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            z-index: 2;
+        }
+
+        .pipeline-mission-text {
+            font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+            color: #ffffff;
+            font-family: 'BlauerNue', sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        .pipeline-mission-text p {
+            margin-bottom: 0;
+        }
+
         /* Decorative Bars */
         .pipeline-hero-bar {
             position: absolute;
-            background: rgba(26, 77, 58, 0.8);
+            background: rgba(50, 22, 95, 0.8);
             z-index: 1;
         }
 
@@ -240,6 +265,7 @@
             left: 2rem;
             width: 120px;
             height: 8px;
+            background: linear-gradient(90deg, rgba(50, 22, 95, 0.9) 0%, rgba(118, 28, 47, 0.9) 100%);
         }
 
         .pipeline-hero-bar.top-left-2 {
@@ -247,6 +273,7 @@
             left: 2rem;
             width: 80px;
             height: 8px;
+            background: linear-gradient(90deg, rgba(64, 30, 78, 0.9) 0%, rgba(156, 31, 45, 0.9) 100%);
         }
 
         .pipeline-hero-bar.bottom-left {
@@ -254,6 +281,7 @@
             left: 2rem;
             width: 100px;
             height: 8px;
+            background: linear-gradient(90deg, rgba(50, 22, 95, 0.9) 0%, rgba(201, 119, 145, 0.9) 100%);
         }
 
         .pipeline-hero-bar.top-right-1 {
@@ -261,7 +289,7 @@
             right: 2rem;
             width: 120px;
             height: 8px;
-            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+            background: linear-gradient(90deg, rgba(239, 67, 68, 0.9) 0%, rgba(156, 31, 45, 0.9) 100%);
         }
 
         .pipeline-hero-bar.top-right-2 {
@@ -269,7 +297,7 @@
             right: 2rem;
             width: 80px;
             height: 8px;
-            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+            background: linear-gradient(90deg, rgba(224, 95, 109, 0.9) 0%, rgba(118, 28, 47, 0.9) 100%);
         }
 
         .pipeline-hero-bar.bottom-right {
@@ -277,7 +305,7 @@
             right: 2rem;
             width: 100px;
             height: 8px;
-            background: linear-gradient(90deg, rgba(139, 74, 107, 0.8) 0%, rgba(255, 100, 50, 0.8) 100%);
+            background: linear-gradient(90deg, rgba(201, 119, 145, 0.9) 0%, rgba(50, 22, 95, 0.9) 100%);
         }
 
         @keyframes fadeInUp {
@@ -304,18 +332,149 @@
             .pipeline-hero-bar {
                 display: none;
             }
+
+            .pipeline-hero-mission {
+                padding: 0 2rem;
+                bottom: 2rem;
+            }
         }
 
-        /* Pipeline Table Section */
+        /* Pipeline Progress Section */
+        .pipeline-progress-section {
+            width: 100%;
+            padding: 6rem 4rem;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .pipeline-progress-container {
+            max-width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .pipeline-progress-content {
+            padding: 5rem 4rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .pipeline-progress-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: -0.01em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .pipeline-progress-section {
+                padding: 4rem 3rem;
+            }
+
+            .pipeline-progress-content {
+                padding: 4rem 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pipeline-progress-section {
+                padding: 4rem 2rem;
+            }
+
+            .pipeline-progress-content {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pipeline-progress-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .pipeline-progress-content {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        /* Pipeline Progress Intro Section */
+        .pipeline-progress-intro {
+            width: 100%;
+            padding: 8rem 4rem 5rem 4rem;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pipeline-progress-intro-container {
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .pipeline-progress-intro-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .pipeline-progress-intro-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .pipeline-progress-intro-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 500;
+            color: #000000;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 1300px;
+        }
+
+        @media (max-width: 768px) {
+            .pipeline-progress-intro {
+                padding: 4rem 2rem;
+            }
+
+            .pipeline-progress-intro-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .pipeline-progress-intro-icon {
+                display: none;
+            }
+        }
+
+        /* Pipeline Table Section - Full Screen */
         .pipeline-table-section {
             width: 100%;
-            padding: 6rem 3rem;
+            min-height: 100vh;
+            padding: 6rem 4rem;
             background: #ffffff;
             overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .pipeline-table-container {
-            max-width: 1800px;
+            max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -324,25 +483,39 @@
             text-align: center;
         }
 
+        .pipeline-table-header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pipeline-table-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pipeline-table-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         .pipeline-table-title {
             font-family: 'BlauerNue', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-align: center;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #32165f;
+            line-height: 1.4;
+            margin: 0;
         }
 
         .pipeline-table-subtitle {
-            font-family: 'BlauerNue', sans-serif;
-            font-size: clamp(1rem, 1.5vw, 1.2rem);
-            font-weight: 400;
-            color: #666666;
-            line-height: 1.6;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            display: none;
         }
 
         .pipeline-table-wrapper {
@@ -351,362 +524,326 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .pipeline-table {
+        /* New Modern Pipeline Table */
+        .pipeline-modern-table {
             width: 100%;
-            min-width: 1400px;
+            min-width: 1000px;
             border-collapse: collapse;
+            font-family: 'BlauerNue', sans-serif;
+            background: #ffffff;
+        }
+
+        .pipeline-modern-table thead th {
+            text-align: center;
+            padding: 1.25rem 1rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #6b7280;
+            border-bottom: 1px solid #e5e7eb;
+            background: #ffffff;
             font-family: 'BlauerNue', sans-serif;
         }
 
-        .pipeline-table thead th {
+        .pipeline-modern-table thead th:first-child,
+        .pipeline-modern-table thead th:nth-child(2),
+        .pipeline-modern-table thead th:nth-child(3) {
             text-align: left;
-            padding: 1.5rem 1rem;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #666666;
-            border-bottom: 2px solid #e0e0e0;
-            background: #fafafa;
-            position: sticky;
-            top: 0;
-            z-index: 10;
         }
 
-        .pipeline-table tbody tr {
-            border-bottom: 1px solid #f0f0f0;
-            transition: background 0.2s ease;
+        .pipeline-modern-table thead th:first-child {
+            width: 14%;
         }
 
-        .pipeline-table tbody tr:hover {
-            background: #fafafa;
+        .pipeline-modern-table thead th:nth-child(2) {
+            width: 12%;
         }
 
-        .pipeline-table td {
+        .pipeline-modern-table thead th:nth-child(3) {
+            width: 18%;
+        }
+
+        /* Phase columns divider line */
+        .pipeline-modern-table thead th:nth-child(3)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 1px;
+            background: #d1d5db;
+        }
+
+        .pipeline-modern-table thead th:nth-child(3) {
+            position: relative;
+        }
+
+        .pipeline-modern-table tbody tr {
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .pipeline-modern-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .pipeline-modern-table td {
             padding: 2rem 1rem;
             vertical-align: middle;
+            font-size: 1.15rem;
+            color: #374151;
+            background: #ffffff;
+            font-family: 'BlauerNue', sans-serif;
         }
 
-        .pipeline-name {
+        .pipeline-modern-table td:first-child {
+            text-align: left;
+        }
+
+        .pipeline-modern-table td:nth-child(2),
+        .pipeline-modern-table td:nth-child(3) {
+            text-align: left;
+            color: #333333;
+        }
+
+        /* Program name styling */
+        .program-name {
             font-weight: 600;
             color: #ef4344;
-            font-size: 1rem;
-            min-width: 200px;
-        }
-
-        .pipeline-modality {
-            font-weight: 400;
-            color: #ef4344;
-            font-size: 0.95rem;
-            min-width: 180px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .pipeline-modality-icon {
             font-size: 1.2rem;
+            line-height: 1.4;
+            font-family: 'BlauerNue', sans-serif;
         }
 
-        .pipeline-indication {
-            font-weight: 400;
+        .program-name span {
+            display: block;
+            font-size: 1rem;
             color: #ef4344;
-            font-size: 0.95rem;
-            min-width: 200px;
         }
 
-        .pipeline-stage {
-            min-width: 140px;
+        /* Progress bar container - spans across phase columns */
+        .progress-cell {
             position: relative;
-            padding: 0 1px;
-            vertical-align: bottom;
+            padding: 0 !important;
         }
 
-        .pipeline-stage-bar-wrapper {
-            width: 100%;
-            height: 28px;
-            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
-            border-radius: 14px;
+        .progress-wrapper {
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            box-shadow:
-                inset 0 2px 4px rgba(255, 255, 255, 0.6),
-                inset 0 -2px 4px rgba(0, 0, 0, 0.2),
-                0 2px 8px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .pipeline-stage-bar {
-            width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem 1rem;
+        }
+
+        /* Background track - Tube style */
+        .progress-track {
+            position: relative;
+            height: 28px;
+            background: linear-gradient(180deg, #e8e8e8 0%, #f5f5f5 50%, #e0e0e0 100%);
             border-radius: 14px;
-            position: relative;
-            overflow: hidden;
+            width: 100%;
+            overflow: visible;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 -1px 2px rgba(255, 255, 255, 0.8);
         }
 
-        .pipeline-stage-bar.active {
-            position: relative;
-            background: transparent;
-        }
-
-        .pipeline-stage-bar.active::before {
-            content: '';
+        /* Progress bar with gradient - Tube style */
+        .progress-bar {
             position: absolute;
             top: 0;
             left: 0;
-            width: 0;
             height: 100%;
-            background: var(--bar-color, #1e0634);
-            animation: fillProgress 0.6s ease-out forwards, shimmer 3s linear infinite;
-            animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 0.6s);
             border-radius: 14px;
+            background: linear-gradient(180deg,
+                    #e05f6d 0%,
+                    #ef4344 20%,
+                    #9c1f2d 50%,
+                    #761c2f 80%,
+                    #32165f 100%);
+            background-size: 100% 100%;
+            width: 0;
+            animation: progressFill 1.5s ease-out forwards;
             box-shadow:
-                inset 0 2px 8px rgba(255, 255, 255, 0.4),
-                inset 0 -2px 6px rgba(0, 0, 0, 0.3),
-                0 2px 12px rgba(239, 67, 68, 0.3),
-                0 0 20px rgba(239, 67, 68, 0.15);
+                inset 0 2px 4px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+                0 2px 6px rgba(50, 22, 95, 0.3);
         }
 
-        /* Stage 1: PRE-CLINICAL (4. column) - Tek renk (violet) */
-        .pipeline-table tbody tr td:nth-child(4).pipeline-stage .pipeline-stage-bar.active::before {
-            --bar-color: #1e0634;
-            /* violet */
-        }
-
-        /* Stage 2: PROOF OF CONCEPT (5. column) - Hafif değişim */
-        .pipeline-table tbody tr td:nth-child(5).pipeline-stage .pipeline-stage-bar.active::before {
-            --bar-color: #32165f;
-            /* scarlet-gum */
-        }
-
-        /* Stage 3: CONTROLLED FIELD STUDY (6. column) - Orta renk */
-        .pipeline-table tbody tr td:nth-child(6).pipeline-stage .pipeline-stage-bar.active::before {
-            --bar-color: #401e4e;
-            /* grape */
-        }
-
-        /* Stage 4: PIVOTAL STUDY (7. column) - Daha parlak */
-        .pipeline-table tbody tr td:nth-child(7).pipeline-stage .pipeline-stage-bar.active::before {
-            --bar-color: #761c2f;
-            /* crown-of-thorns */
-        }
-
-        /* Stage 5: COMMERCIALLY AVAILABLE (8. column) - En parlak (gökkuşağı sonu) */
-        .pipeline-table tbody tr td:nth-child(8).pipeline-stage .pipeline-stage-bar.active::before {
-            background: linear-gradient(135deg,
-                    #9c1f2d 0%,
-                    /* old-brick */
-                    #ef4344 50%,
-                    /* flamingo */
-                    #e05f6d 100%
-                    /* sunglo */
-                );
-        }
-
-        /* Premium 3D tube effect with highlight */
-        .pipeline-stage-bar.active::after {
+        /* Tube highlight/shine effect */
+        .progress-bar::after {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 0;
-            width: 0;
-            height: 40%;
-            background: linear-gradient(to bottom,
-                    rgba(255, 255, 255, 0.5) 0%,
-                    rgba(255, 255, 255, 0.2) 50%,
-                    transparent 100%);
-            border-radius: 14px 14px 0 0;
-            animation: fillProgress 0.6s ease-out forwards;
-            animation-delay: var(--delay, 0s);
-            pointer-events: none;
+            top: 3px;
+            left: 8px;
+            right: 8px;
+            height: 8px;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.4) 50%,
+                    rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 10px;
         }
 
-        @keyframes shimmer {
-            0% {
-                background-position: 0% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        @keyframes fillProgress {
+        @keyframes progressFill {
             from {
                 width: 0;
             }
 
             to {
-                width: 100%;
+                width: var(--progress-width, 0%);
             }
         }
 
-        /* Hover effect for premium feel */
-        .pipeline-table tbody tr:hover .pipeline-stage-bar-wrapper {
-            transform: translateY(-1px);
-            box-shadow:
-                inset 0 2px 4px rgba(255, 255, 255, 0.7),
-                inset 0 -2px 4px rgba(0, 0, 0, 0.25),
-                0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        /* Progress status text */
+        .progress-status {
+            font-size: 0.95rem;
+            color: #ef4344;
+            margin-top: 0.75rem;
+            font-weight: 500;
+            font-family: 'BlauerNue', sans-serif;
         }
 
-        .pipeline-table tbody tr:hover .pipeline-stage-bar.active::before {
-            box-shadow:
-                inset 0 2px 8px rgba(255, 255, 255, 0.5),
-                inset 0 -2px 6px rgba(0, 0, 0, 0.35),
-                0 4px 16px rgba(239, 67, 68, 0.4),
-                0 0 24px rgba(239, 67, 68, 0.2);
+        /* Different gradient colors for different rows - NOX Biotech palette */
+        .progress-bar.gradient-1 {
+            background: linear-gradient(90deg, #32165f 0%, #761c2f 30%, #9c1f2d 50%, #ef4344 75%, #e05f6d 100%);
         }
 
-        /* Remove gaps between bars for continuous look - single bar */
-        .pipeline-table tbody td.pipeline-stage {
-            padding-left: 0;
-            padding-right: 0;
-            padding-top: 1.5rem;
-            padding-bottom: 1rem;
-            vertical-align: bottom;
-            height: 80px;
+        .progress-bar.gradient-2 {
+            background: linear-gradient(90deg, #1e0634 0%, #401e4e 30%, #32165f 60%, #761c2f 100%);
         }
 
-        .pipeline-table tbody td.pipeline-stage:first-child {
-            padding-left: 1rem;
+        .progress-bar.gradient-3 {
+            background: linear-gradient(90deg, #32165f 0%, #9c1f2d 40%, #c97791 70%, #e05f6d 100%);
         }
 
-        .pipeline-table tbody td.pipeline-stage:last-child {
-            padding-right: 1rem;
-            height: 80px;
+        .progress-bar.gradient-4 {
+            background: linear-gradient(90deg, #3a051c 0%, #761c2f 50%, #ef4344 100%);
         }
 
-        /* Smooth connection between tube segments - no gaps */
-        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar-wrapper {
-            margin-left: 0;
-            border-left: none;
-        }
-
-        /* Remove border radius on inner edges for seamless connection */
-        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar-wrapper {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .pipeline-table tbody td.pipeline-stage:not(:last-child) .pipeline-stage-bar-wrapper {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        /* First bar - left rounded */
-        .pipeline-table tbody td.pipeline-stage:first-child .pipeline-stage-bar-wrapper {
-            border-top-left-radius: 14px;
-            border-bottom-left-radius: 14px;
-        }
-
-        /* Last bar - right rounded */
-        .pipeline-table tbody td.pipeline-stage:last-child .pipeline-stage-bar-wrapper {
-            border-top-right-radius: 14px;
-            border-bottom-right-radius: 14px;
-        }
-
-        /* Active bars - remove border radius on inner edges */
-        .pipeline-table tbody td.pipeline-stage:not(:first-child) .pipeline-stage-bar.active::before {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .pipeline-table tbody td.pipeline-stage:not(:last-child) .pipeline-stage-bar.active::before {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        /* First active bar - left rounded */
-        .pipeline-table tbody td.pipeline-stage:first-child .pipeline-stage-bar.active::before {
-            border-top-left-radius: 14px;
-            border-bottom-left-radius: 14px;
-        }
-
-        /* Last active bar - right rounded */
-        .pipeline-table tbody td.pipeline-stage:last-child .pipeline-stage-bar.active::before {
-            border-top-right-radius: 14px;
-            border-bottom-right-radius: 14px;
-        }
-
-        .pipeline-table thead th {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            height: 60px;
-        }
-
-        .pipeline-table thead th:first-child {
-            padding-left: 1rem;
-        }
-
-        .pipeline-table thead th:last-child {
-            padding-right: 1rem;
-        }
-
-        .pipeline-table tbody td.pipeline-stage:first-child {
-            padding-left: 1rem;
-        }
-
-        .pipeline-stage-label {
-            display: none;
-        }
-
-        .pipeline-stage-lock {
-            width: 20px;
-            height: 20px;
-            margin: 16px auto 0;
-            color: #ff9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .pipeline-table tbody td.pipeline-stage:has(.pipeline-stage-lock) {
-            position: relative;
-        }
-
-        .pipeline-stage:has(.pipeline-stage-lock) .pipeline-stage-bar-wrapper {
-            background: linear-gradient(to bottom, #d5d5d5 0%, #c0c0c0 50%, #d5d5d5 100%);
-            opacity: 0.7;
-        }
-
-        .pipeline-status-label {
-            display: none;
+        .progress-bar.gradient-5 {
+            background: linear-gradient(90deg, #1e0634 0%, #32165f 50%, #9c1f2d 100%);
         }
 
         @media (max-width: 1024px) {
             .pipeline-table-section {
-                padding: 4rem 1.5rem;
-            }
-
-            .pipeline-stage-bar-wrapper {
-                height: 24px;
-                border-radius: 12px;
-            }
-
-            .pipeline-stage-bar.active::before,
-            .pipeline-stage-bar.active::after {
-                border-radius: 12px;
+                padding: 4rem 2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .pipeline-stage-bar-wrapper {
-                height: 22px;
-                border-radius: 11px;
+            .pipeline-table-section {
+                padding: 3rem 1rem;
             }
 
-            .pipeline-stage-bar.active::before,
-            .pipeline-stage-bar.active::after {
-                border-radius: 11px;
+            .pipeline-modern-table {
+                min-width: 700px;
+            }
+        }
+
+        /* Mirkets Image Section */
+        .mirkets-section {
+            width: 100%;
+            padding: 6rem 4rem;
+            background: url('assets/backdeneme.jpg') center center / cover no-repeat;
+            position: relative;
+        }
+
+        .mirkets-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 250, 250, 0.85);
+            z-index: 0;
+        }
+
+        .mirkets-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 0;
+            min-height: 450px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mirkets-image-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mirkets-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .mirkets-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: transparent;
+            position: relative;
+        }
+
+        .mirkets-title,
+        .mirkets-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mirkets-title {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .mirkets-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        .mirkets-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .mirkets-section {
+                grid-template-columns: 1fr;
+            }
+
+            .mirkets-image-wrapper {
+                min-height: 400px;
+            }
+
+            .mirkets-content {
+                padding: 4rem 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mirkets-content {
+                padding: 3rem 2rem;
+            }
+
+            .mirkets-image-wrapper {
+                min-height: 300px;
             }
         }
 
@@ -824,8 +961,8 @@
             <ul class="nav-menu">
                 <li><a href="pipeline.html">Pipeline</a></li>
                 <li><a href="purpose.html">Purpose</a></li>
-                <li><a href="index.html#people">People</a></li>
-                <li><a href="index.html#in-nox">In-Nox</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="innox.html">In-Nox</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -836,14 +973,19 @@
         <img src="assets/at.jpeg" alt="Pipeline Hero Background" class="pipeline-hero-background">
         <div class="pipeline-hero-content">
             <h1 class="pipeline-hero-title">
-                Lorem ipsum dolor<br>sit amet consectetur
+                Differentiated regenerative therapies,<br>developed at field pace
             </h1>
             <div class="pipeline-hero-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.</p>
+                <p>With our regenerative biology platform and a multidisciplinary team spanning veterinary clinicians,
+                    academic researchers, and industry operators, we translate stem cell and exosome science into
+                    antibiotic-light therapeutics for animal health. Our pipeline is built around rigorous validation,
+                    standardized manufacturing, and real-world usability—so advanced biologics can be trusted,
+                    deployable, and scalable in routine care.</p>
+            </div>
+        </div>
+        <div class="pipeline-hero-mission">
+            <div class="pipeline-mission-text">
+                <p>Founded in 2021, we're proud of the progress we've made so far. And we're just getting started.</p>
             </div>
         </div>
         <!-- Decorative Bars -->
@@ -855,221 +997,173 @@
         <div class="pipeline-hero-bar bottom-right"></div>
     </section>
 
+    <!-- Pipeline Progress Intro Section -->
+    <section class="pipeline-progress-intro">
+        <div class="pipeline-progress-intro-container">
+            <div class="pipeline-progress-intro-icon">
+                <img src="assets/1x/Varlık 13.png" alt="Icon">
+            </div>
+            <p class="pipeline-progress-intro-text">
+                Several NOX regenerative programs are already progressing through R&D and field validation.<br>
+                Watch their progress.
+            </p>
+            <div class="pipeline-progress-intro-icon">
+                <img src="assets/1x/Varlık 13.png" alt="Icon">
+            </div>
+        </div>
+    </section>
+
     <!-- Pipeline Table Section -->
     <section class="pipeline-table-section">
         <div class="pipeline-table-container">
             <div class="pipeline-table-header">
-                <h2 class="pipeline-table-title">From Discovery to Approval</h2>
-                <p class="pipeline-table-subtitle">A regenerative pipeline advancing veterinary care across species and
-                    modalities.</p>
+                <div class="pipeline-table-header-top">
+                    <h2 class="pipeline-table-title">Potential best-in-class therapies for animal health conditions</h2>
+                </div>
             </div>
             <div class="pipeline-table-wrapper">
-                <table class="pipeline-table">
+                <table class="pipeline-modern-table">
                     <thead>
                         <tr>
-                            <th>NAME</th>
-                            <th>MODALITY</th>
-                            <th>INDICATION</th>
-                            <th>PRE-CLINICAL</th>
-                            <th>PROOF OF CONCEPT</th>
-                            <th>CONTROLLED FIELD STUDY</th>
-                            <th>PIVOTAL STUDY</th>
-                            <th>COMMERCIALLY AVAILABLE</th>
+                            <th>Program</th>
+                            <th>Animal</th>
+                            <th>Indication</th>
+                            <th>Discovery</th>
+                            <th>Proof of concept</th>
+                            <th>Controlled</th>
+                            <th>Pivotal study</th>
+                            <th>Commercial</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Row 1: Feline Chronic Gingivostomatitis -->
+                        <!-- Row 1: NXE-91-M - Pivotal study seviyesi (%80) -->
                         <tr>
-                            <td class="pipeline-name">Feline Chronic Gingivostomatitis</td>
-                            <td class="pipeline-modality">
-                                <span class="pipeline-modality-icon">*</span>
-                                <span>Allogeneic MSCs</span>
+                            <td>
+                                <div class="program-name">NXE-91-M</div>
                             </td>
-                            <td class="pipeline-indication">Feline Chronic Gingivostomatitis</td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                            <td>Dairy cow</td>
+                            <td>Subclinical and clinical mastitis</td>
+                            <td colspan="5" class="progress-cell">
+                                <div class="progress-wrapper">
+                                    <div class="progress-track">
+                                        <div class="progress-bar gradient-1" style="--progress-width: 80%;"></div>
+                                    </div>
+                                    <div class="progress-status">Pivotal study-ongoing</div>
                                 </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.9s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z" />
-                                </svg>
                             </td>
                         </tr>
-                        <!-- Row 2: Feline Osteoarthritis -->
+                        <!-- Row 2: NXS-75-M - Pivotal study seviyesi (%80) -->
                         <tr>
-                            <td class="pipeline-name">Feline Osteoarthritis</td>
-                            <td class="pipeline-modality">
-                                <span class="pipeline-modality-icon">*</span>
-                                <span>Allogeneic MSCs</span>
+                            <td>
+                                <div class="program-name">NXS-75-M</div>
                             </td>
-                            <td class="pipeline-indication">Feline Osteoarthritis</td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                            <td>Dairy cow</td>
+                            <td>Subclinical and clinical mastitis</td>
+                            <td colspan="5" class="progress-cell">
+                                <div class="progress-wrapper">
+                                    <div class="progress-track">
+                                        <div class="progress-bar gradient-1" style="--progress-width: 80%;"></div>
+                                    </div>
+                                    <div class="progress-status">Pivotal study-ongoing</div>
                                 </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z" />
-                                </svg>
                             </td>
                         </tr>
-                        <!-- Row 3: Canine Osteoarthritis -->
+                        <!-- Row 3: NXE-86-Kid - Proof of concept seviyesi (%40) -->
                         <tr>
-                            <td class="pipeline-name">Canine Osteoarthritis</td>
-                            <td class="pipeline-modality">
-                                <span class="pipeline-modality-icon">*</span>
-                                <span>Allogeneic MSCs</span>
+                            <td>
+                                <div class="program-name">NXE-86-Kid</div>
                             </td>
-                            <td class="pipeline-indication">Canine Osteoarthritis</td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                            <td>Cat</td>
+                            <td>Chronic Kidney Disease</td>
+                            <td colspan="5" class="progress-cell">
+                                <div class="progress-wrapper">
+                                    <div class="progress-track">
+                                        <div class="progress-bar gradient-1" style="--progress-width: 40%;"></div>
+                                    </div>
+                                    <div class="progress-status">PoC-enabling</div>
                                 </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z" />
-                                </svg>
                             </td>
                         </tr>
-                        <!-- Row 4: Feline Chronic Kidney Disease -->
+                        <!-- Row 4: NXE-121-AD - Discovery seviyesi (%20) -->
                         <tr>
-                            <td class="pipeline-name">Feline Chronic Kidney Disease</td>
-                            <td class="pipeline-modality">
-                                <span class="pipeline-modality-icon">@</span>
-                                <span>Exosome Therapy</span>
+                            <td>
+                                <div class="program-name">NXE-121-AD</div>
                             </td>
-                            <td class="pipeline-indication">Feline Chronic Kidney Disease</td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                            <td>Dog</td>
+                            <td>Atopic Dermatitis</td>
+                            <td colspan="5" class="progress-cell">
+                                <div class="progress-wrapper">
+                                    <div class="progress-track">
+                                        <div class="progress-bar gradient-1" style="--progress-width: 20%;"></div>
+                                    </div>
+                                    <div class="progress-status">Discovery</div>
                                 </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z" />
-                                </svg>
                             </td>
                         </tr>
-                        <!-- Row 5: Canine Atopic Dermatitis -->
+                        <!-- Row 5: NXC-45 - Discovery seviyesi (%20) -->
                         <tr>
-                            <td class="pipeline-name">Canine Atopic Dermatitis</td>
-                            <td class="pipeline-modality">
-                                <span class="pipeline-modality-icon">☐</span>
-                                <span>Stem Cell Therapy</span>
+                            <td>
+                                <div class="program-name">NXC-45</div>
                             </td>
-                            <td class="pipeline-indication">Canine Atopic Dermatitis</td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0s"></div>
+                            <td>Calf</td>
+                            <td>IgG absorption</td>
+                            <td colspan="5" class="progress-cell">
+                                <div class="progress-wrapper">
+                                    <div class="progress-track">
+                                        <div class="progress-bar gradient-1" style="--progress-width: 20%;"></div>
+                                    </div>
+                                    <div class="progress-status">Discovery</div>
                                 </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.3s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar active" style="--delay: 0.6s"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                            </td>
-                            <td class="pipeline-stage">
-                                <div class="pipeline-stage-bar-wrapper">
-                                    <div class="pipeline-stage-bar"></div>
-                                </div>
-                                <svg class="pipeline-stage-lock" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18 10h-1V7c0-3.31-2.69-6-6-6S5 3.69 5 7v3H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7z" />
-                                </svg>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mirkets Image Section -->
+    <section class="mirkets-section">
+        <div class="mirkets-container">
+            <div class="mirkets-image-wrapper">
+                <img src="assets/mirkets.jpg" alt="Mirkets" class="mirkets-image">
+            </div>
+            <div class="mirkets-content">
+                <h2 class="mirkets-title">Lorem Ipsum Dolor Sit Amet</h2>
+                <div class="mirkets-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                        dicta sunt explicabo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mirkets Image Section 2 -->
+    <section class="mirkets-section">
+        <div class="mirkets-container">
+            <div class="mirkets-image-wrapper">
+                <img src="assets/mirkets.jpg" alt="Mirkets" class="mirkets-image">
+            </div>
+            <div class="mirkets-content">
+                <h2 class="mirkets-title">Lorem Ipsum Dolor Sit Amet</h2>
+                <div class="mirkets-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                        dicta sunt explicabo.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1083,8 +1177,8 @@
                 resilience.
             </p>
             <div class="purpose-cta-buttons">
-                <a href="index.html#contact" class="purpose-cta-button partner">Partner With Us</a>
-                <a href="index.html#contact" class="purpose-cta-button join">Join The Team</a>
+                <a href="contact.html" class="purpose-cta-button partner">Partner With Us</a>
+                <a href="contact.html" class="purpose-cta-button join">Join The Team</a>
             </div>
         </div>
     </section>
@@ -1104,7 +1198,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="pipeline.html">Pipeline</a></li>
                         <li><a href="purpose.html">Purpose</a></li>
-                        <li><a href="index.html#people">People</a></li>
+                        <li><a href="people.html">People</a></li>
+                        <li><a href="innox.html">In-Nox</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

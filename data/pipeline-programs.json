@@ -1,0 +1,63 @@
+[
+  {
+    "program": "NXE-91-M",
+    "animal": "Dairy cow",
+    "indication": "Subclinical and clinical mastitis",
+    "stages": {
+      "discovery": true,
+      "proofOfConcept": true,
+      "controlled": true,
+      "pivotalStudy": true,
+      "commercially": false
+    }
+  },
+  {
+    "program": "NXS-75-M",
+    "animal": "Dairy cow",
+    "indication": "Subclinical and clinical mastitis",
+    "stages": {
+      "discovery": true,
+      "proofOfConcept": true,
+      "controlled": true,
+      "pivotalStudy": true,
+      "commercially": false
+    }
+  },
+  {
+    "program": "NXE-86-Kid",
+    "animal": "Cat",
+    "indication": "Chronic Kidney Disease",
+    "stages": {
+      "discovery": true,
+      "proofOfConcept": true,
+      "controlled": false,
+      "pivotalStudy": false,
+      "commercially": false
+    }
+  },
+  {
+    "program": "NXE-121-AD",
+    "animal": "Dog",
+    "indication": "Atopic Dermatitis",
+    "stages": {
+      "discovery": true,
+      "proofOfConcept": false,
+      "controlled": false,
+      "pivotalStudy": false,
+      "commercially": false
+    }
+  },
+  {
+    "program": "NXC-45",
+    "animal": "Calf",
+    "indication": "IgG absorption",
+    "stages": {
+      "discovery": true,
+      "proofOfConcept": false,
+      "controlled": false,
+      "pivotalStudy": false,
+      "commercially": false
+    }
+  }
+]
+
