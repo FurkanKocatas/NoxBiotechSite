@@ -2175,13 +2175,14 @@ body {
     max-width: 1400px;
     margin: 0 auto 5rem;
     padding: 0 4rem;
+    text-align: left;
 }
 
 .footer-main-logo {
     height: 120px;
     width: auto;
     object-fit: contain;
-    display: block;
+    display: inline-block;
 }
 
 .footer-main {
