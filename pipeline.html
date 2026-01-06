@@ -201,7 +201,6 @@
             margin-bottom: 3rem;
             letter-spacing: -0.02em;
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -214,7 +213,6 @@
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
             animation: fadeInUp 0.8s ease-out 0.3s both;
             font-family: 'BlauerNue', sans-serif;
             text-align: center;
@@ -245,7 +243,6 @@
             font-family: 'BlauerNue', sans-serif;
             font-weight: 400;
             line-height: 1.8;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
             text-align: left;
         }
 
@@ -335,7 +332,6 @@
 
             .pipeline-hero-mission {
                 padding: 0 2rem;
-                bottom: 2rem;
             }
         }
 
@@ -908,7 +904,154 @@
             transform: translateY(-2px);
         }
 
+        @media (max-width: 1024px) {
+            .pipeline-hero {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .pipeline-hero-content {
+                flex: 1;
+            }
+
+            .pipeline-hero-mission {
+                position: static;
+                width: 100%;
+                padding: 2rem;
+                text-align: center;
+                background: transparent;
+                margin: 0;
+                margin-top: 2rem;
+            }
+
+            .pipeline-mission-text {
+                text-align: center;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.9);
+            }
+        }
+
         @media (max-width: 768px) {
+            .pipeline-hero {
+                height: auto;
+                min-height: 100vh;
+                padding-bottom: 3rem;
+            }
+
+            .pipeline-hero-content {
+                padding: 140px 1.5rem 3rem;
+            }
+
+            .pipeline-hero-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .pipeline-hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Founded text - integrated into hero, no separate box */
+            .pipeline-hero-mission {
+                position: static;
+                width: 100%;
+                padding: 0;
+                background: transparent;
+                margin: 0;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                margin-top: 2rem;
+            }
+
+            .pipeline-mission-text {
+                font-size: 0.9rem;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* Hide decorative bars on mobile */
+            .pipeline-hero-bar {
+                display: none !important;
+            }
+
+        }
+
+        /* Pipeline table responsive - only on mobile */
+        @media (max-width: 768px) {
+            .pipeline-table-section {
+                padding: 3rem 1.5rem;
+            }
+
+            /* Convert table to cards */
+            .pipeline-modern-table,
+            .pipeline-modern-table thead,
+            .pipeline-modern-table tbody,
+            .pipeline-modern-table th,
+            .pipeline-modern-table td,
+            .pipeline-modern-table tr {
+                display: block;
+            }
+
+            .pipeline-modern-table thead {
+                display: none;
+                /* Hide headers on mobile */
+            }
+
+            .pipeline-modern-table tbody tr {
+                margin-bottom: 2.5rem;
+                padding: 1.5rem;
+                border: 1px solid #e5e7eb;
+                border-radius: 16px;
+                background: #fff;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+
+            .pipeline-modern-table td {
+                padding: 0.75rem 0 !important;
+                border: none !important;
+                text-align: left !important;
+            }
+
+            .pipeline-modern-table td:first-child {
+                border-bottom: 2px solid #f3f4f6 !important;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem !important;
+            }
+
+            /* Show labels for cells */
+            .pipeline-modern-table td::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                color: #6b7280;
+                margin-bottom: 0.25rem;
+                font-weight: 600;
+            }
+
+            .pipeline-modern-table td:first-child::before,
+            .pipeline-modern-table td:nth-child(2)::before,
+            .pipeline-modern-table td:nth-child(3)::before {
+                display: block;
+            }
+
+            .progress-wrapper {
+                min-height: auto;
+                padding: 1.5rem 0;
+            }
+
+            .progress-track {
+                height: 40px;
+                border-radius: 8px;
+            }
+
+            .progress-bar {
+                height: 24px;
+                border-radius: 6px;
+            }
+
             .purpose-cta-standalone {
                 padding: 6rem 1.5rem;
                 background-attachment: scroll;
@@ -934,6 +1077,11 @@
             <a href="index.html" class="logo">
                 <img src="assets/Logo.png" alt="NOX Biotech Logo">
             </a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="pipeline.html">Pipeline</a></li>
                 <li><a href="purpose.html">Purpose</a></li>
@@ -1014,12 +1162,12 @@
                     <tbody>
                         <!-- Row 1: NXE-91-M - Pivotal study seviyesi (%80) -->
                         <tr>
-                            <td>
+                            <td data-label="Program">
                                 <div class="program-name">NXE-91-M</div>
                             </td>
-                            <td>Dairy cow</td>
-                            <td>Subclinical and clinical mastitis</td>
-                            <td colspan="5" class="progress-cell">
+                            <td data-label="Animal">Dairy cow</td>
+                            <td data-label="Indication">Subclinical and clinical mastitis</td>
+                            <td colspan="5" class="progress-cell" data-label="Status">
                                 <div class="progress-wrapper">
                                     <div class="progress-track">
                                         <div class="progress-bar gradient-1" style="--progress-width: 80%;"></div>
@@ -1030,12 +1178,12 @@
                         </tr>
                         <!-- Row 2: NXS-75-M - Pivotal study seviyesi (%80) -->
                         <tr>
-                            <td>
+                            <td data-label="Program">
                                 <div class="program-name">NXS-75-M</div>
                             </td>
-                            <td>Dairy cow</td>
-                            <td>Subclinical and clinical mastitis</td>
-                            <td colspan="5" class="progress-cell">
+                            <td data-label="Animal">Dairy cow</td>
+                            <td data-label="Indication">Subclinical and clinical mastitis</td>
+                            <td colspan="5" class="progress-cell" data-label="Status">
                                 <div class="progress-wrapper">
                                     <div class="progress-track">
                                         <div class="progress-bar gradient-1" style="--progress-width: 80%;"></div>
@@ -1046,12 +1194,12 @@
                         </tr>
                         <!-- Row 3: NXE-86-Kid - Proof of concept seviyesi (%40) -->
                         <tr>
-                            <td>
+                            <td data-label="Program">
                                 <div class="program-name">NXE-86-Kid</div>
                             </td>
-                            <td>Cat</td>
-                            <td>Chronic Kidney Disease</td>
-                            <td colspan="5" class="progress-cell">
+                            <td data-label="Animal">Cat</td>
+                            <td data-label="Indication">Chronic Kidney Disease</td>
+                            <td colspan="5" class="progress-cell" data-label="Status">
                                 <div class="progress-wrapper">
                                     <div class="progress-track">
                                         <div class="progress-bar gradient-1" style="--progress-width: 40%;"></div>
@@ -1062,12 +1210,12 @@
                         </tr>
                         <!-- Row 4: NXE-121-AD - Discovery seviyesi (%20) -->
                         <tr>
-                            <td>
+                            <td data-label="Program">
                                 <div class="program-name">NXE-121-AD</div>
                             </td>
-                            <td>Dog</td>
-                            <td>Atopic Dermatitis</td>
-                            <td colspan="5" class="progress-cell">
+                            <td data-label="Animal">Dog</td>
+                            <td data-label="Indication">Atopic Dermatitis</td>
+                            <td colspan="5" class="progress-cell" data-label="Status">
                                 <div class="progress-wrapper">
                                     <div class="progress-track">
                                         <div class="progress-bar gradient-1" style="--progress-width: 20%;"></div>
@@ -1078,12 +1226,12 @@
                         </tr>
                         <!-- Row 5: NXC-45 - Discovery seviyesi (%20) -->
                         <tr>
-                            <td>
+                            <td data-label="Program">
                                 <div class="program-name">NXC-45</div>
                             </td>
-                            <td>Calf</td>
-                            <td>IgG absorption</td>
-                            <td colspan="5" class="progress-cell">
+                            <td data-label="Animal">Calf</td>
+                            <td data-label="Indication">IgG absorption</td>
+                            <td colspan="5" class="progress-cell" data-label="Status">
                                 <div class="progress-wrapper">
                                     <div class="progress-track">
                                         <div class="progress-bar gradient-1" style="--progress-width: 20%;"></div>

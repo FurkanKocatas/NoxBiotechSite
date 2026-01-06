@@ -1,8 +1,27 @@
 // Smooth scroll and navbar effects
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.navbar');
-    const hero = document.querySelector('.hero');
-    
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    // Hamburger toggle
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking links
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+
     // Add smooth scroll - no offset needed since navbar is absolute
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -16,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Logo visibility for light backgrounds
     const sections = [
         { element: document.querySelector('.hero'), isLight: false },
@@ -25,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { element: document.querySelector('.our-purpose-section'), isLight: true },
         { element: document.querySelector('.contact-section'), isLight: false }
     ];
-    
+
     const logoImg = document.querySelector('.logo img');
-    
+
     window.addEventListener('scroll', () => {
         const navbarHeight = navbar.offsetHeight;
-        
+
         // Find which section the navbar is over
         let currentSection = sections[0];
         for (const section of sections) {
@@ -43,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
+
         // Adjust logo visibility for light backgrounds
         if (logoImg) {
             if (currentSection.isLight) {
@@ -54,17 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    
+
     // Parallax effect for hero background
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const heroBackground = document.querySelector('.hero-background');
-        
+
         if (heroBackground && scrolled < window.innerHeight) {
             heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
             // Removed opacity fade to prevent blur effect when scrolling
         }
-        
+
         // Track scrolling state
         isScrolling = true;
         clearTimeout(scrollTimeout);
@@ -80,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const shapes = document.querySelectorAll('.shape');
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
-            
+
             shapes.forEach((shape, index) => {
                 const speed = (index + 1) * 20;
                 const x = (mouseX - 0.5) * speed;
@@ -95,20 +114,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Button click animations
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
     buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
-            
+
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = x + 'px';
             ripple.style.top = y + 'px';
             ripple.classList.add('ripple');
-            
+
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 ripple.remove();
             }, 600);
@@ -143,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
         particle.style.opacity = Math.random() * 0.5 + 0.2;
         document.querySelector('.hero-background').appendChild(particle);
-        
+
         setTimeout(() => {
             particle.remove();
         }, 5000);
@@ -501,7 +520,7 @@ function initPurposeSection() {
     const purposeSection = document.querySelector('.purpose-section');
     const purposeWrapper = document.querySelector('.purpose-text-wrapper');
     const purposeTitle = document.querySelector('.purpose-title');
-    
+
     if (!purposeSection || !purposeWrapper || !purposeTitle) return;
 
     // Make wrapper visible immediately
@@ -512,37 +531,37 @@ function initPurposeSection() {
         const chars = purposeTitle.querySelectorAll('.char');
         const titleRect = purposeTitle.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
-        
+
         const titleTop = titleRect.top;
-        
+
         // 1.2x faster scroll range for quicker animation - still letter by letter
         // Start when title is 65% down the viewport
         // Finish when title is 40% down
         const startPoint = viewportHeight * 0.65;
         const endPoint = viewportHeight * 0.40;
         const scrollRange = startPoint - endPoint;
-        
+
         // Calculate progress: 0 when title top is at startPoint, 1 when at endPoint
         let scrollProgress = 0;
-        
+
         if (titleTop <= startPoint && titleTop >= endPoint) {
             scrollProgress = (startPoint - titleTop) / scrollRange;
         } else if (titleTop < endPoint) {
             scrollProgress = 1;
         }
-        
+
         scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-        
+
         // Change characters from black to orange letter by letter with precise control
         chars.forEach((char, index) => {
             // Calculate the exact progress point for this character
             const charProgress = index / (chars.length - 1);
-            
+
             // Larger transition window for faster but still smooth animation (4% of total range)
             const transitionWidth = 0.04;
             const charStart = Math.max(0, charProgress - transitionWidth);
             const charEnd = Math.min(1, charProgress + transitionWidth);
-            
+
             if (scrollProgress < charStart) {
                 // Haven't reached this letter yet - white
                 char.style.color = '#fff';
@@ -560,7 +579,7 @@ function initPurposeSection() {
             }
         });
     }
-    
+
     // Update on scroll with throttling
     let ticking = false;
     function requestTick() {
@@ -572,15 +591,15 @@ function initPurposeSection() {
             ticking = true;
         }
     }
-    
+
     window.addEventListener('scroll', requestTick);
-    
+
     // Initial update
     updateTextColor();
 }
 
 // Initialize purpose section
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initPurposeSection();
     // Canvas animation removed - using video/gif/animated image instead
     // initAnimalCanvas();

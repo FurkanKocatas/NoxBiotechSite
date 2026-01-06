@@ -8,18 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Custom styles for People page specific elements if needed, 
-           mainly relying on styles.css */
-
+        /* People Hero Section */
         .people-hero {
             position: relative;
-            min-height: 60vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #000;
             overflow: hidden;
-            padding-top: 80px;
         }
 
         .people-hero-bg {
@@ -29,7 +26,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.7;
             z-index: 0;
         }
 
@@ -38,25 +35,145 @@
             z-index: 1;
             text-align: center;
             color: #fff;
-            max-width: 800px;
+            max-width: 900px;
             padding: 0 2rem;
         }
 
         .people-hero-title {
             font-family: 'BlauerNue', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(1.8rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            margin-bottom: 0;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #ffffff;
+            animation: fadeInUp 0.8s ease-out;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .people-hero-text {
+        .people-hero-title span {
+            display: block;
+            white-space: nowrap;
+        }
+
+        .people-hero-title span:first-child {
+            padding-left: 4rem;
+        }
+
+        .people-hero {
+            border-bottom: 16px solid #ffffff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* WHO WE ARE Grid Section */
+        .whoweare-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            min-height: 100vh;
+        }
+
+        .whoweare-text-box {
+            background: #fff;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .whoweare-heading {
             font-family: 'BlauerNue', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 300;
-            line-height: 1.6;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
         }
 
+        .whoweare-text {
+            font-family: 'BlauerNue', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .whoweare-image-box {
+            position: relative;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .whoweare-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .whoweare-image-box:hover .whoweare-image {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .people-hero {
+                min-height: 80vh;
+            }
+
+            .people-hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .people-hero-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .whoweare-section {
+                grid-template-columns: 1fr;
+            }
+
+            .whoweare-text-box {
+                padding: 3rem 2rem;
+                order: 1;
+            }
+
+            .whoweare-heading {
+                font-size: 1.75rem;
+            }
+
+            .whoweare-text {
+                font-size: 1rem;
+            }
+
+            .whoweare-image-box {
+                min-height: 300px;
+            }
+
+            .whoweare-image-box:nth-child(2) {
+                order: 2;
+            }
+
+            .whoweare-image-box:nth-child(3) {
+                order: 3;
+            }
+
+            .whoweare-image-box:nth-child(4) {
+                order: 4;
+            }
+        }
+
+        /* Team Sections - Leadership and Board */
         .team-section {
             padding: 6rem 4rem;
             background: #fff;
@@ -69,7 +186,7 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             justify-content: center;
         }
@@ -77,9 +194,9 @@
         .team-member {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            max-width: 300px;
-            /* Prevent too large images */
+            align-items: center;
+            width: 100%;
+            max-width: 280px;
             margin: 0 auto;
         }
 
@@ -95,7 +212,8 @@
         .member-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 2rem;
             transition: transform 0.5s ease;
         }
 
@@ -105,11 +223,12 @@
 
         .member-info {
             width: 100%;
+            text-align: center;
         }
 
         .member-name {
             font-family: 'BlauerNue', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: #000;
             margin-bottom: 0.5rem;
@@ -117,20 +236,38 @@
 
         .member-role {
             font-family: 'BlauerNue', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #ef4344;
             font-weight: 500;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
+            line-height: 1.4;
         }
 
-        .member-bio {
+        .section-title {
             font-family: 'BlauerNue', sans-serif;
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .board-section {
+            background: #f5f5f5;
+        }
+
+        .board-grid {
+            max-width: 700px;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -139,7 +276,12 @@
             }
 
             .team-grid {
+                grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .board-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -152,6 +294,11 @@
             <a href="index.html" class="logo">
                 <img src="assets/Logo.png" alt="NOX Biotech Logo">
             </a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="pipeline.html">Pipeline</a></li>
                 <li><a href="purpose.html">Purpose</a></li>
@@ -164,73 +311,147 @@
 
     <!-- People Hero -->
     <section class="people-hero">
-        <img src="assets/animalcell.jpeg" alt="People Background" class="people-hero-bg">
+        <img src="assets/peoplepage/peoplehero.png" alt="People Background" class="people-hero-bg">
         <div class="people-hero-content">
-            <h1 class="people-hero-title">ANIMAL. CELL. HUMAN.</h1>
-            <p class="people-hero-text">
-                We grow like cells: with purpose, structure, and scale. Our multidisciplinary team spans veterinary
-                clinicians, academic researchers, and industry operators.
-            </p>
+            <h1 class="people-hero-title">
+                <span>From lab to field — together</span>
+                <span>From discovery to care — together</span>
+            </h1>
         </div>
     </section>
 
-    <!-- Team Layout -->
+    <!-- WHO WE ARE Section -->
+    <section class="whoweare-section">
+        <!-- Text Box - Top Left -->
+        <div class="whoweare-text-box">
+            <h2 class="whoweare-heading">WHO WE ARE</h2>
+            <p class="whoweare-text">
+                We build NOX BIOTECH at the intersection of the barn and the bench—veterinary clinicians,
+                regenerative biologists, and partners who know what works in real animal care. We've already
+                moved from early evidence to field validation. Join us as we scale what's next.
+            </p>
+            <p class="whoweare-text">
+                We hire builders with humility—people who learn fast, run rigorous experiments, and ship
+                practical solutions. If you're a self-starter who thrives in a collaborative, high-standards
+                team, apply to join us.
+            </p>
+        </div>
+
+        <!-- Image 1 - Top Right -->
+        <div class="whoweare-image-box">
+            <img src="assets/peoplepage/whoweare.png" alt="Our Team" class="whoweare-image">
+        </div>
+
+        <!-- Image 2 - Bottom Left -->
+        <div class="whoweare-image-box">
+            <img src="assets/peoplepage/whoweare2.png" alt="Our Work" class="whoweare-image">
+        </div>
+
+        <!-- Image 3 - Bottom Right -->
+        <div class="whoweare-image-box">
+            <img src="assets/peoplepage/whoweare3.png" alt="Our Mission" class="whoweare-image">
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
     <section class="team-section">
         <div class="team-container">
+            <h2 class="section-title">Leadership</h2>
             <div class="team-grid">
-                <!-- Team Member 1 -->
+                <!-- Durmus Hatipoglu -->
                 <div class="team-member">
                     <div class="member-image-wrapper">
-                        <!-- Placeholder image or generic avatar -->
-                        <img src="assets/1x/varlik1.png" alt="Team Member" class="member-image"
-                            style="object-fit: contain; padding: 2rem;">
+                        <img src="assets/1x/varlik1.png" alt="Durmus Hatipoglu" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Dr. Name Surname</h3>
+                        <h3 class="member-name">Durmuş Hatipoğlu, DVM, PhD</h3>
+                        <p class="member-role">Chief Executive Officer</p>
+                    </div>
+                </div>
+
+                <!-- CFO Placeholder -->
+                <div class="team-member">
+                    <div class="member-image-wrapper">
+                        <img src="assets/1x/varlik1.png" alt="CFO" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">XXXX</h3>
+                        <p class="member-role">Chief Financial Officer</p>
+                    </div>
+                </div>
+
+                <!-- M.Burak Ates -->
+                <div class="team-member">
+                    <div class="member-image-wrapper">
+                        <img src="assets/1x/varlik1.png" alt="M.Burak Ates" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">M. Burak Ateş, DVM, PhD</h3>
+                        <p class="member-role">CMO and Head of Clinical Pipeline Strategy</p>
+                    </div>
+                </div>
+
+                <!-- Burcugul Altug -->
+                <div class="team-member">
+                    <div class="member-image-wrapper">
+                        <img src="assets/1x/varlik1.png" alt="Burcugul Altug" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Burçugül Altuğ, PhD</h3>
                         <p class="member-role">Chief Scientific Officer</p>
-                        <p class="member-bio">Leading our research into regenerative therapies with over 20 years of
-                            experience in veterinary medicine.</p>
                     </div>
                 </div>
 
-                <!-- Team Member 2 -->
+                <!-- Merve Nur Soykan -->
                 <div class="team-member">
                     <div class="member-image-wrapper">
-                        <img src="assets/1x/varlik1.png" alt="Team Member" class="member-image"
-                            style="object-fit: contain; padding: 2rem;">
+                        <img src="assets/1x/varlik1.png" alt="Merve Nur Soykan" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Name Surname</h3>
-                        <p class="member-role">Head of Operations</p>
-                        <p class="member-bio">Ensuring field-fit delivery design and standardized manufacturing
-                            processes.</p>
+                        <h3 class="member-name">Merve Nur Soykan, MSc</h3>
+                        <p class="member-role">Chief Technology Officer</p>
                     </div>
                 </div>
 
-                <!-- Team Member 3 -->
+                <!-- Ali Uslu -->
                 <div class="team-member">
                     <div class="member-image-wrapper">
-                        <img src="assets/1x/varlik1.png" alt="Team Member" class="member-image"
-                            style="object-fit: contain; padding: 2rem;">
+                        <img src="assets/1x/varlik1.png" alt="Ali Uslu" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Dr. Name Surname</h3>
-                        <p class="member-role">Veterinary Clinician</p>
-                        <p class="member-bio">Specializing in clinical application and real-world usability of advanced
-                            biologics.</p>
+                        <h3 class="member-name">Ali Uslu, DVM, PhD</h3>
+                        <p class="member-role">Chief Development Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board Section -->
+    <section class="team-section board-section">
+        <div class="team-container">
+            <h2 class="section-title">Board</h2>
+            <div class="team-grid board-grid">
+                <!-- Umit Cem Aksoy -->
+                <div class="team-member">
+                    <div class="member-image-wrapper">
+                        <img src="assets/1x/varlik1.png" alt="Umit Cem Aksoy" class="member-image">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Ümit Cem Aksoy, DVM</h3>
+                        <p class="member-role">Deputy General Manager and Head of Animal Health at Fatro & Güneşli
+                            Animal Health</p>
                     </div>
                 </div>
 
-                <!-- Team Member 4 -->
+                <!-- Ahmet Ercan -->
                 <div class="team-member">
                     <div class="member-image-wrapper">
-                        <img src="assets/1x/varlik1.png" alt="Team Member" class="member-image"
-                            style="object-fit: contain; padding: 2rem;">
+                        <img src="assets/1x/varlik1.png" alt="Ahmet Ercan" class="member-image">
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Name Surname</h3>
-                        <p class="member-role">Research Scientist</p>
-                        <p class="member-bio">Focused on stem cell and exosome science translation.</p>
+                        <h3 class="member-name">Ahmet Ercan, DVM, MSc</h3>
+                        <p class="member-role">Avian Business Unit Manager at Fatro & Güneşli Animal Health</p>
                     </div>
                 </div>
             </div>
@@ -307,28 +528,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Use the same navbar logic as pipeline.html
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.querySelector('.navbar');
-            const logoImg = document.querySelector('.logo img');
-            // Add 'navbar-light' class immediately if we want it to be light always, or handle scroll like pipeline
-            // For this page, let's keep it consistent.
 
-            // Simple version for this page:
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.backdropFilter = 'blur(10px)';
-                    navbar.style.padding = '1rem 0';
-                } else {
-                    navbar.style.background = 'transparent';
-                    navbar.style.backdropFilter = 'none';
-                    navbar.style.padding = '2rem 0';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
