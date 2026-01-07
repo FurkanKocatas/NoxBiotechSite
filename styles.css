@@ -283,7 +283,8 @@ body {
         justify-content: center;
         margin-top: auto;
         /* Push to bottom */
-        margin-bottom: 3rem;
+        margin-bottom: 9rem;
+        /* Increased further to move it up */
         width: 100%;
         color: #ffffff;
     }
