@@ -318,6 +318,15 @@
         }
 
         @media (max-width: 768px) {
+            .pipeline-hero {
+                height: 60vh;
+                min-height: 60vh;
+            }
+
+            .pipeline-hero-background {
+                object-position: 50% 20%;
+            }
+
             .pipeline-hero-content {
                 padding: 0 2rem;
             }
@@ -1083,11 +1092,23 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="pipeline.html">Pipeline</a></li>
+                <li class="mobile-logo-item">
+                    <a href="index.html">
+                        <img src="assets/Logo.png" alt="NOX Biotech Logo">
+                    </a>
+                </li>
+                <li><a href="pipeline.html" class="active">Pipeline</a></li>
                 <li><a href="purpose.html">Purpose</a></li>
                 <li><a href="people.html">People</a></li>
                 <li><a href="innox.html">In-Nox</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-hallmark-item">
+                    <img src="assets/1x/varlik1.png" alt="From Cell to Care">
+                    <div class="mobile-nav-tagline">
+                        <span>From Cell</span>
+                        <span>to Care.</span>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -1128,7 +1149,11 @@
                 <img src="assets/1x/Varlık 13.png" alt="Icon">
             </div>
             <p class="pipeline-progress-intro-text">
-                Several NOX regenerative programs are already progressing through R&D and field validation.<br>
+                Several NOX<br>
+                regenerative programs<br>
+                are already progressing<br>
+                through R&D and field<br>
+                validation.<br>
                 Watch their progress.
             </p>
             <div class="pipeline-progress-intro-icon">
