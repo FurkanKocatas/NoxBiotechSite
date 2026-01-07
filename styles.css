@@ -59,11 +59,18 @@
     box-sizing: border-box;
 }
 
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     width: 100%;
+    background: var(--bg-dark);
 }
 
 :root {
@@ -94,13 +101,12 @@ html {
 
 body {
     font-family: 'BlauerNue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden !important;
+    position: relative;
     background: var(--bg-dark);
     margin: 0;
     padding: 0;
     width: 100%;
-    max-width: 100vw;
 }
 
 /* Navigation */
@@ -140,10 +146,17 @@ body {
     transition: filter 0.3s ease;
 }
 
+/* Default Nav Styles */
+.mobile-logo-item,
+.mobile-hallmark-item {
+    display: none;
+}
+
+
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -218,7 +231,7 @@ body {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -70%;
+        right: 0;
         width: 70%;
         max-width: 350px;
         height: 100vh;
@@ -228,13 +241,17 @@ body {
         justify-content: flex-start;
         padding-top: 100px;
         gap: 1.5rem;
-        transition: right 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s 0.4s;
         z-index: 1001;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
     }
 
     .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s 0s;
     }
 
     .hamburger {
@@ -243,6 +260,54 @@ body {
 
     .nav-menu a {
         font-size: 1.5rem;
+    }
+
+    .mobile-logo-item {
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .mobile-logo-item img {
+        height: 80px;
+        /* Adjust size as needed */
+        width: auto;
+        object-fit: contain;
+    }
+
+    .mobile-hallmark-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+        /* Push to bottom */
+        margin-bottom: 3rem;
+        width: 100%;
+        color: #ffffff;
+    }
+
+    .mobile-hallmark-item img {
+        width: 50px;
+        height: auto;
+        margin-bottom: 0.5rem;
+        opacity: 1;
+        /* removed opacity to keep it crisp white */
+        filter: brightness(0) invert(1);
+        /* Make icon white */
+    }
+
+    .mobile-nav-tagline {
+        text-align: center;
+        font-family: 'BlauerNue', sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.2;
+        opacity: 0.9;
+    }
+
+    .mobile-nav-tagline span {
+        display: block;
     }
 }
 
@@ -1010,6 +1075,14 @@ body {
 
     .hero {
         padding: 0;
+        height: 60vh;
+        /* Reduced height for better visibility */
+        min-height: 500px;
+        margin-bottom: 0;
+    }
+
+    .hero-image video {
+        object-position: center center;
     }
 
     .hero-content {
@@ -1064,7 +1137,11 @@ body {
     }
 
     .platform-section {
-        padding: 0;
+        padding-top: 3rem;
+        /* Spacing from hero */
+        padding-bottom: 0;
+        background-color: #ffffff;
+        /* Ensure white background for the gap */
     }
 
     .platform-container {
@@ -1104,9 +1181,15 @@ body {
 }
 
 /* Samsung Galaxy S24 FE and real mobile devices */
-@media (max-width: 430px) {
+/* Mobile and small devices */
+@media (max-width: 480px) {
 
-    .platform-section,
+    .platform-section {
+        padding-top: 6rem;
+        padding-bottom: 0;
+        background-color: #ffffff;
+    }
+
     .purpose-section,
     .our-purpose-section {
         padding: 0;
@@ -1262,7 +1345,8 @@ body {
     display: block;
     position: relative;
     width: 100%;
-    white-space: nowrap;
+    white-space: normal;
+    /* Changed from nowrap to normal to prevent overflow */
 }
 
 .purpose-line-1 {
@@ -1399,8 +1483,9 @@ body {
 @media (max-width: 768px) {
     .purpose-section {
         padding: 0;
-        height: 75vh;
-        min-height: 75vh;
+        height: 60vh;
+        /* Reduced from 75vh/100vh */
+        min-height: 60vh;
     }
 
     .purpose-container {
@@ -1430,7 +1515,8 @@ body {
 }
 
 /* Samsung Galaxy S24 FE and similar (390px width) */
-@media (max-width: 430px) {
+/* Mobile and small devices */
+@media (max-width: 480px) {
     .purpose-container {
         padding: 0 1.2rem;
     }
@@ -1852,7 +1938,8 @@ body {
 }
 
 /* Samsung Galaxy S24 FE */
-@media (max-width: 430px) {
+/* Mobile and small devices */
+@media (max-width: 480px) {
     .our-purpose-container {
         padding: 0 1.2rem;
         gap: 1.5rem;
@@ -2030,6 +2117,20 @@ body {
     animation: fadeIn 1.2s ease-out 0.4s both;
 }
 
+/* Who We Are Icon Styles */
+.whoweare-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.whoweare-icon {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* Responsive for Our People Section */
 /* 2560x1440 (2K/QHD) */
 @media (max-width: 2560px) {
@@ -2154,6 +2255,17 @@ body {
         padding: 0 1.5rem;
     }
 
+    .our-people-section {
+        height: 60vh;
+        /* Reduced from 100vh to check if quality improves (less zoom) */
+        min-height: 500px;
+    }
+
+    .our-people-image img {
+        object-position: 50% 20%;
+        /* Same alignment fix as others */
+    }
+
     .our-people-label {
         margin-top: -4rem;
         margin-bottom: 2rem;
@@ -2174,10 +2286,20 @@ body {
     .our-people-description {
         font-size: clamp(0.85rem, 3vw, 0.95rem);
     }
+
+    .whoweare-title-container {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .whoweare-icon {
+        height: 40px;
+    }
 }
 
 /* Samsung Galaxy S24 FE */
-@media (max-width: 430px) {
+/* Mobile and small devices */
+@media (max-width: 480px) {
     .our-people-content {
         padding: 0 1.2rem;
     }
