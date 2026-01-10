@@ -107,6 +107,40 @@
             font-display: swap;
         }
 
+        /* Italic Font Variants */
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Regular_Italic.woff2') format('woff2'),
+                url('assets/fonts/BlauerNue-Regular_Italic.woff') format('woff'),
+                url('assets/fonts/BlauerNue-Regular_Italic.ttf') format('truetype'),
+                url('assets/fonts/BlauerNue-Regular_Italic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-Bold_Italic.woff2') format('woff2'),
+                url('assets/fonts/BlauerNue-Bold_Italic.woff') format('woff'),
+                url('assets/fonts/BlauerNue-Bold_Italic.ttf') format('truetype'),
+                url('assets/fonts/BlauerNue-Bold_Italic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'BlauerNue';
+            src: url('assets/fonts/BlauerNue-ExtraBold_Italic.woff2') format('woff2'),
+                url('assets/fonts/BlauerNue-ExtraBold_Italic.woff') format('woff'),
+                url('assets/fonts/BlauerNue-ExtraBold_Italic.ttf') format('truetype'),
+                url('assets/fonts/BlauerNue-ExtraBold_Italic.otf') format('opentype');
+            font-weight: 800;
+            font-style: italic;
+            font-display: swap;
+        }
+
         :root {
             /* Logo Colors */
             --old-brick: #9c1f2d;
@@ -146,7 +180,7 @@
             object-fit: contain;
         }
 
-        /* Pipeline Hero Section */
+        /* Pipeline Hero Section - Matching Reference Design */
         .pipeline-hero {
             position: relative;
             min-height: 100vh;
@@ -155,7 +189,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 120px;
         }
 
         .pipeline-hero-background {
@@ -180,97 +213,123 @@
         }
 
         .pipeline-hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 4rem;
             position: relative;
             z-index: 2;
+            max-width: 1200px;
             width: 100%;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 0 4rem;
         }
 
         .pipeline-hero-title {
             font-family: 'BlauerNue', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 700;
+            font-style: normal;
             line-height: 1.1;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             letter-spacing: -0.02em;
             color: #ffffff;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         .pipeline-hero-description {
-            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
-            line-height: 1.8;
-            color: #ffffff;
-            margin-bottom: 2rem;
+            font-size: clamp(0.85rem, 1.3vw, 1rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             font-weight: 400;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
             font-family: 'BlauerNue', sans-serif;
             text-align: center;
         }
 
         .pipeline-hero-description p {
-            margin-bottom: 1.5rem;
-        }
-
-        .pipeline-hero-description p:last-child {
-            margin-bottom: 0;
+            margin: 0;
         }
 
         .pipeline-hero-mission {
             position: absolute;
-            bottom: 4rem;
-            left: 0;
-            right: 0;
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: 0 4rem;
+            bottom: 3rem;
+            left: 4rem;
             z-index: 2;
+            max-width: 600px;
         }
 
         .pipeline-mission-text {
-            font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-            color: #ffffff;
+            font-size: clamp(0.7rem, 1vw, 0.85rem);
+            color: rgba(255, 255, 255, 0.85);
             font-family: 'BlauerNue', sans-serif;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.6;
             text-align: left;
         }
 
         .pipeline-mission-text p {
-            margin-bottom: 0;
+            margin: 0;
         }
 
-        /* Decorative Bars */
+        /* Decorative Bars - Corner Accents */
         .pipeline-hero-bar {
             position: absolute;
-            background: rgba(50, 22, 95, 0.8);
-            z-index: 1;
+            z-index: 3;
         }
 
         .pipeline-hero-bar.top-left-1 {
-            top: 2rem;
-            left: 2rem;
-            width: 120px;
-            height: 8px;
-            background: linear-gradient(90deg, rgba(50, 22, 95, 0.9) 0%, rgba(118, 28, 47, 0.9) 100%);
+            top: 1.5rem;
+            left: 1.5rem;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(201, 119, 145, 0.9) 0%, rgba(156, 31, 45, 0.9) 100%);
         }
 
         .pipeline-hero-bar.top-left-2 {
-            top: 3.5rem;
-            left: 2rem;
-            width: 80px;
-            height: 8px;
-            background: linear-gradient(90deg, rgba(64, 30, 78, 0.9) 0%, rgba(156, 31, 45, 0.9) 100%);
+            top: 2.5rem;
+            left: 1.5rem;
+            width: 25px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(156, 31, 45, 0.9) 0%, rgba(201, 119, 145, 0.9) 100%);
+        }
+
+        .pipeline-hero-bar.bottom-left {
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 30px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(50, 22, 95, 0.9) 0%, rgba(201, 119, 145, 0.9) 100%);
+        }
+
+        .pipeline-hero-bar.top-right-1 {
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(239, 67, 68, 0.9) 0%, rgba(156, 31, 45, 0.9) 100%);
+        }
+
+        .pipeline-hero-bar.top-right-2 {
+            top: 2.5rem;
+            right: 1.5rem;
+            width: 25px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(224, 95, 109, 0.9) 0%, rgba(118, 28, 47, 0.9) 100%);
+        }
+
+        .pipeline-hero-bar.bottom-right {
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 30px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(201, 119, 145, 0.9) 0%, rgba(50, 22, 95, 0.9) 100%);
+        }
+
+        .pipeline-hero-bar.top-left-1 {
+            display: none;
+            /* Hidden to avoid logo collision */
+        }
+
+        .pipeline-hero-bar.top-left-2 {
+            display: none;
+            /* Hidden to avoid logo collision */
         }
 
         .pipeline-hero-bar.bottom-left {
@@ -319,8 +378,10 @@
 
         @media (max-width: 768px) {
             .pipeline-hero {
-                height: 60vh;
-                min-height: 60vh;
+                height: auto;
+                min-height: 80vh;
+                padding-top: 140px;
+                padding-bottom: 4rem;
             }
 
             .pipeline-hero-background {
@@ -332,7 +393,7 @@
             }
 
             .pipeline-hero-title {
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
 
             .pipeline-hero-bar {
@@ -340,7 +401,7 @@
             }
 
             .pipeline-hero-mission {
-                padding: 0 2rem;
+                padding: 2rem;
             }
         }
 

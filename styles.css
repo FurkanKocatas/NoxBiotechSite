@@ -315,11 +315,14 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 110vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 .hero-background {
@@ -598,7 +601,7 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 3rem;
+    bottom: 6rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -629,13 +632,14 @@ body {
 /* Platform Section */
 .platform-section {
     position: relative;
-    height: 100vh;
     min-height: 100vh;
+    height: auto;
     background: var(--bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 10rem 0;
 }
 
 .platform-container {
@@ -1075,11 +1079,18 @@ body {
     }
 
     .hero {
-        padding: 0;
-        height: 60vh;
-        /* Reduced height for better visibility */
-        min-height: 500px;
+        padding: 120px 0 0;
+        height: auto;
+        min-height: 80vh;
+        /* Increased height for better visibility */
         margin-bottom: 0;
+        padding-bottom: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .hero-image video {
@@ -1125,9 +1136,8 @@ body {
         padding: 1.5rem 0;
     }
 
-    .purpose-hero-content,
-    .pipeline-hero-content {
-        padding-top: 140px !important;
+    .purpose-hero-content {
+        padding-top: 140px;
     }
 
     .molecule-svg {
@@ -1483,8 +1493,8 @@ body {
 
 @media (max-width: 768px) {
     .purpose-section {
-        padding: 0;
-        height: 60vh;
+        padding: 4rem 0;
+        height: auto;
         /* Reduced from 75vh/100vh */
         min-height: 60vh;
     }
@@ -2257,9 +2267,10 @@ body {
     }
 
     .our-people-section {
-        height: 60vh;
+        height: auto;
         /* Reduced from 100vh to check if quality improves (less zoom) */
-        min-height: 500px;
+        min-height: 60vh;
+        padding: 4rem 0;
     }
 
     .our-people-image img {
